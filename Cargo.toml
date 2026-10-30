@@ -1,0 +1,33 @@
+[package]
+name = "ruhit"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "A resilient, span-aware parser and serializer for the MOOSE HIT input format"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["moose", "hit", "parser", "wasm", "input"]
+categories = ["parser-implementations", "wasm"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["serde"]
+serde = ["dep:serde"]
+wasm = ["dep:wasm-bindgen", "dep:js-sys", "dep:serde_json", "serde"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"], optional = true }
+serde_json = { version = "1.0", optional = true }
+wasm-bindgen = { version = "0.2", optional = true }
+js-sys = { version = "0.3", optional = true }
+
+[dev-dependencies]
+serde_json = "1.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "s"
+strip = true
