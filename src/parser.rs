@@ -8,25 +8,50 @@
 use std::collections::HashMap;
 
 use crate::ast::{
-    split_header, ArrayElement, Block, Comment, Diagnostic, Document, Item, Parameter, Severity,
-    Span, Value, ValueKind,
+    split_header, ArrayElement, Block, Comment, Diagnostic, Document, Item, Parameter, QuoteMark,
+    Severity, Span, Value, ValueKind,
 };
-use crate::lexer::{tokenize, Token, TokenKind};
+use crate::lexer::{tokenize_with, LexOptions, Token, TokenKind};
 
 /// Hard limit for recursive block/array nesting. This keeps pathological input
 /// from overflowing the native or WASM stack.
 const MAX_NESTING: usize = 128;
 
+/// Parser behaviour switches.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub struct ParseOptions {
+    /// Enable WASP HIT compatibility. See [`LexOptions::wasp_compat`].
+    pub wasp_compat: bool,
+}
+
+impl ParseOptions {
+    pub const fn wasp() -> Self {
+        Self { wasp_compat: true }
+    }
+}
+
 /// Parse HIT source into an AST. Recoverable errors are stored in
 /// [`Document::diagnostics`].
 pub fn parse(source: &str) -> Document {
-    let lexed = tokenize(source);
+    parse_with_options(source, ParseOptions::default())
+}
+
+/// Parse HIT source with explicit options.
+pub fn parse_with_options(source: &str, options: ParseOptions) -> Document {
+    let lexed = tokenize_with(
+        source,
+        LexOptions {
+            wasp_compat: options.wasp_compat,
+        },
+    );
     let mut parser = Parser {
         source,
         tokens: lexed.tokens,
         pos: 0,
         diagnostics: lexed.diagnostics,
         array_depth: 0,
+        wasp_compat: options.wasp_compat,
+        wasp_recovery: None,
     };
     parser.parse_document()
 }
@@ -43,6 +68,8 @@ struct Parser<'a> {
     pos: usize,
     diagnostics: Vec<Diagnostic>,
     array_depth: usize,
+    wasp_compat: bool,
+    wasp_recovery: Option<u32>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -57,6 +84,10 @@ struct HeaderInfo {
     raw: String,
     span: Span,
     kind: HeaderKind,
+    /// True when the closing `]` was missing, so WASP already reported a
+    /// header error. The block still exists, but an empty block should not
+    /// produce a second end-of-file diagnostic.
+    unterminated: bool,
 }
 
 impl<'a> Parser<'a> {
@@ -109,7 +140,11 @@ impl<'a> Parser<'a> {
                     ));
                     self.advance();
                 }
-                TokenKind::Equals | TokenKind::Comma => {
+                TokenKind::Equals
+                | TokenKind::OverrideEquals
+                | TokenKind::Comma
+                | TokenKind::Semicolon
+                | TokenKind::Quote(_) => {
                     self.diagnostics.push(Diagnostic::error(
                         "unexpected-token",
                         format!("unexpected {}", token.kind.describe()),
@@ -130,13 +165,15 @@ impl<'a> Parser<'a> {
             _ => Span::point(start_position),
         };
 
-        self.diagnostics.sort_by_key(|diagnostic| {
-            (
-                diagnostic.span.start.offset,
-                diagnostic.span.end.offset,
-                diagnostic.code.clone(),
-            )
-        });
+        if !self.wasp_compat {
+            self.diagnostics.sort_by_key(|diagnostic| {
+                (
+                    diagnostic.span.start.offset,
+                    diagnostic.span.end.offset,
+                    diagnostic.code.clone(),
+                )
+            });
+        }
 
         Document::new(items, span, std::mem::take(&mut self.diagnostics))
     }
@@ -175,11 +212,29 @@ impl<'a> Parser<'a> {
             let token = self.peek().clone();
             match token.kind {
                 TokenKind::Eof => {
-                    self.diagnostics.push(Diagnostic::error(
-                        "unclosed-block",
-                        format!("unclosed block '{name}'; expected a closing header"),
-                        header.span,
-                    ));
+                    if self.wasp_compat {
+                        if items.is_empty() {
+                            if !header.unterminated {
+                                self.diagnostics.push(Diagnostic::error(
+                                    "syntax-error",
+                                    "syntax error, unexpected end of file",
+                                    Span::point(token.span.start),
+                                ));
+                            }
+                        } else {
+                            self.diagnostics.push(Diagnostic::error(
+                                "syntax-error",
+                                "syntax error, unexpected end of file, expecting block terminator",
+                                Span::point(header.span.start),
+                            ));
+                        }
+                    } else {
+                        self.diagnostics.push(Diagnostic::error(
+                            "unclosed-block",
+                            format!("unclosed block '{name}'; expected a closing header"),
+                            header.span,
+                        ));
+                    }
                     break;
                 }
                 TokenKind::LBracket => {
@@ -217,7 +272,11 @@ impl<'a> Parser<'a> {
                     ));
                     self.advance();
                 }
-                TokenKind::Equals | TokenKind::Comma => {
+                TokenKind::Equals
+                | TokenKind::OverrideEquals
+                | TokenKind::Comma
+                | TokenKind::Semicolon
+                | TokenKind::Quote(_) => {
                     self.diagnostics.push(Diagnostic::error(
                         "unexpected-token",
                         format!("unexpected {}", token.kind.describe()),
@@ -245,6 +304,34 @@ impl<'a> Parser<'a> {
         ))
     }
 
+    fn wasp_unexpected(&mut self, token: &Token, expecting: Option<&str>) {
+        if self.wasp_recovery.is_some() {
+            return;
+        }
+        let position = if matches!(token.kind, TokenKind::Newline) {
+            token.span.end
+        } else {
+            token.span.start
+        };
+        let message = match expecting {
+            Some(expected) => format!(
+                "syntax error, unexpected {}, expecting {}",
+                wasp_token_display(&token.kind),
+                expected
+            ),
+            None => format!(
+                "syntax error, unexpected {}",
+                wasp_token_display(&token.kind)
+            ),
+        };
+        self.diagnostics.push(Diagnostic::error(
+            "syntax-error",
+            message,
+            Span::point(position),
+        ));
+        self.wasp_recovery = Some(0);
+    }
+
     fn parse_header(&mut self) -> HeaderInfo {
         let open = self.advance();
         let open_span = open.span;
@@ -255,6 +342,7 @@ impl<'a> Parser<'a> {
                 raw: String::new(),
                 span: Span::new(open_span.start, close.span.end),
                 kind: HeaderKind::Close,
+                unterminated: false,
             };
         }
 
@@ -262,7 +350,21 @@ impl<'a> Parser<'a> {
             self.peek().kind,
             TokenKind::Newline | TokenKind::Eof | TokenKind::Comment(_)
         ) {
-            let end = self.peek().span.start;
+            let token = self.peek().clone();
+            let end = if matches!(token.kind, TokenKind::Newline) {
+                token.span.end
+            } else {
+                token.span.start
+            };
+            if self.wasp_compat {
+                self.wasp_unexpected(&token, Some("object name"));
+                return HeaderInfo {
+                    raw: String::new(),
+                    span: Span::new(open_span.start, end),
+                    kind: HeaderKind::Open,
+                    unterminated: true,
+                };
+            }
             self.diagnostics.push(Diagnostic::error(
                 "unclosed-block-header",
                 "expected ']' after block header",
@@ -272,6 +374,7 @@ impl<'a> Parser<'a> {
                 raw: String::new(),
                 span: Span::new(open_span.start, end),
                 kind: HeaderKind::Invalid,
+                unterminated: false,
             };
         }
 
@@ -296,18 +399,28 @@ impl<'a> Parser<'a> {
                         raw,
                         span: Span::new(open_span.start, close.span.end),
                         kind,
+                        unterminated: false,
                     };
                 }
                 TokenKind::Newline | TokenKind::Eof | TokenKind::Comment(_) => {
-                    let end = self.peek().span.start;
+                    let token = self.peek().clone();
+                    let end = if matches!(token.kind, TokenKind::Newline) {
+                        token.span.end
+                    } else {
+                        token.span.start
+                    };
                     let raw = self.source[content_start..end.offset as usize]
                         .trim()
                         .to_string();
-                    self.diagnostics.push(Diagnostic::error(
-                        "unclosed-block-header",
-                        "expected ']' to close block header",
-                        Span::new(open_span.start, end),
-                    ));
+                    if self.wasp_compat {
+                        self.wasp_unexpected(&token, Some("]"));
+                    } else {
+                        self.diagnostics.push(Diagnostic::error(
+                            "unclosed-block-header",
+                            "expected ']' to close block header",
+                            Span::new(open_span.start, end),
+                        ));
+                    }
                     let kind = if raw.is_empty() || is_close_raw(&raw) {
                         HeaderKind::Invalid
                     } else {
@@ -317,6 +430,7 @@ impl<'a> Parser<'a> {
                         raw,
                         span: Span::new(open_span.start, end),
                         kind,
+                        unterminated: true,
                     };
                 }
                 TokenKind::LBracket => {
@@ -342,7 +456,20 @@ impl<'a> Parser<'a> {
             _ => return None,
         };
 
-        if !matches!(self.peek().kind, TokenKind::Equals) {
+        if !matches!(self.peek().kind, TokenKind::Equals | TokenKind::OverrideEquals) {
+            if self.wasp_compat {
+                let token = self.peek().clone();
+                self.wasp_unexpected(&token, Some("= or :="));
+                let mut parameter = Parameter::new(
+                    key,
+                    Value::missing(Span::point(key_token.span.start)),
+                    key_token.span,
+                    key_token.span,
+                    Span::point(key_token.span.end),
+                );
+                parameter.assign = String::new();
+                return Some(Item::Parameter(parameter));
+            }
             self.diagnostics.push(Diagnostic::error(
                 "missing-equals",
                 format!("expected '=' after parameter name '{key}'"),
@@ -353,7 +480,10 @@ impl<'a> Parser<'a> {
         }
 
         let equals = self.advance();
-        let value = self.parse_value_sequence(equals.span.end.line);
+        let assign = self.source
+            [equals.span.start.offset as usize..equals.span.end.offset as usize]
+            .to_string();
+        let value = self.parse_value_sequence(equals.span, &key);
         let value_end = if value.is_missing() {
             equals.span.end
         } else {
@@ -366,16 +496,51 @@ impl<'a> Parser<'a> {
             value.span
         };
 
-        Some(Item::Parameter(Parameter::new(
-            key,
-            value,
-            span,
-            key_token.span,
-            value_span,
-        )))
+        let mut parameter = Parameter::new(key, value, span, key_token.span, value_span);
+        parameter.override_assign = matches!(equals.kind, TokenKind::OverrideEquals);
+        parameter.assign = assign;
+        Some(Item::Parameter(parameter))
     }
 
-    fn parse_value_sequence(&mut self, equals_line: u32) -> Value {
+    /// Report a missing parameter value the way WASP's bison grammar does:
+    /// first the generic unexpected-token error, then the parameter-specific
+    /// "missing or malformed value" error at the assignment.
+    fn report_missing_value(&mut self, equals: Span, key: &str) -> Value {
+        let token = self.peek().clone();
+        if self.wasp_compat {
+            let position = if matches!(token.kind, TokenKind::Newline) {
+                // WASP's EOL token is located at the start of the next line.
+                token.span.end
+            } else {
+                token.span.start
+            };
+            if self.wasp_recovery.is_none() {
+                self.diagnostics.push(Diagnostic::error(
+                    "syntax-error",
+                    format!(
+                        "syntax error, unexpected {}",
+                        wasp_token_display(&token.kind)
+                    ),
+                    Span::point(position),
+                ));
+                self.wasp_recovery = Some(0);
+            }
+            self.diagnostics.push(Diagnostic::error(
+                "missing-value",
+                format!("syntax error, '{key}' has a missing or malformed value"),
+                Span::point(equals.start),
+            ));
+        } else {
+            self.diagnostics.push(Diagnostic::error(
+                "missing-value",
+                "expected a value after '='",
+                Span::point(token.span.start),
+            ));
+        }
+        Value::missing(Span::point(equals.start))
+    }
+
+    fn parse_value_sequence(&mut self, equals: Span, key: &str) -> Value {
         let start = self.peek().span.start;
         let mut multiline = false;
 
@@ -396,13 +561,15 @@ impl<'a> Parser<'a> {
             }
         }
 
-        if self.is_close_header_ahead() && self.peek().span.start.line > equals_line {
-            self.diagnostics.push(Diagnostic::error(
-                "missing-value",
-                "expected a value after '='",
-                Span::point(self.peek().span.start),
-            ));
-            return Value::missing(Span::point(start));
+        if self.is_close_header_ahead() {
+            return self.report_missing_value(equals, key);
+        }
+
+        if self.wasp_compat {
+            if !self.peek_starts_value() {
+                return self.report_missing_value(equals, key);
+            }
+            return self.parse_wasp_value_sequence(start);
         }
 
         let first = self.parse_single_value();
@@ -419,7 +586,7 @@ impl<'a> Parser<'a> {
                 .last()
                 .map(ArrayElement::span)
                 .map(|span| span.end.line)
-                .unwrap_or(equals_line);
+                .unwrap_or(equals.end.line);
 
             if matches!(self.peek().kind, TokenKind::Comma) {
                 self.advance();
@@ -445,8 +612,7 @@ impl<'a> Parser<'a> {
             if self.peek_starts_value()
                 && !self.assignment_ahead()
                 && !(matches!(self.peek().kind, TokenKind::LBracket)
-                    && self.is_close_header_ahead()
-                    && self.peek().span.start.line > last_end_line)
+                    && self.is_close_header_ahead())
                 && self.peek().span.start.line == last_end_line
             {
                 let value = self.parse_single_value();
@@ -482,6 +648,13 @@ impl<'a> Parser<'a> {
 
     fn parse_single_value(&mut self) -> Value {
         let token = self.peek().clone();
+        if self.array_depth == 0
+            && matches!(token.kind, TokenKind::LBracket)
+            && self.is_close_header_ahead()
+        {
+            // `[]` belongs to the enclosing block, not to the value.
+            return Value::missing(Span::point(token.span.start));
+        }
         match token.kind {
             TokenKind::String(literal) => {
                 self.advance();
@@ -504,6 +677,253 @@ impl<'a> Parser<'a> {
                 Value::missing(Span::point(token.span.start))
             }
         }
+    }
+
+    fn parse_wasp_value_sequence(&mut self, start: crate::ast::Position) -> Value {
+        match self.peek().kind {
+            TokenKind::Quote(_) => self.parse_quoted_array(),
+            TokenKind::String(_) if self.peek_quote() == Some('"') => {
+                self.parse_double_quoted_sequence(start)
+            }
+            _ => self.parse_wasp_single_value(),
+        }
+    }
+
+    fn peek_quote(&self) -> Option<char> {
+        match &self.peek().kind {
+            TokenKind::String(literal) => Some(literal.quote),
+            _ => None,
+        }
+    }
+
+    /// WASP treats consecutive double-quoted strings as one array.
+    fn parse_double_quoted_sequence(&mut self, start: crate::ast::Position) -> Value {
+        let mut elements = Vec::new();
+        loop {
+            match self.peek().kind {
+                TokenKind::String(_) if self.peek_quote() == Some('"') => {
+                    let token = self.advance();
+                    if let TokenKind::String(literal) = token.kind {
+                        elements.push(ArrayElement::Value(Value::quoted_string(
+                            literal.value,
+                            literal.raw,
+                            literal.quote,
+                            token.span,
+                        )));
+                    }
+                }
+                TokenKind::Newline => {
+                    // WASP's lexer gobbles newlines between adjacent quoted
+                    // strings.
+                    self.advance();
+                }
+                _ => break,
+            }
+        }
+
+        if elements.len() == 1 {
+            match elements.pop() {
+                Some(ArrayElement::Value(value)) => value,
+                _ => Value::missing(Span::point(start)),
+            }
+        } else {
+            let end = elements
+                .last()
+                .map(ArrayElement::span)
+                .map(|span| span.end)
+                .unwrap_or(start);
+            Value::array(elements, false, false, Span::new(start, end))
+        }
+    }
+
+    /// Parse `'a b;c'` and adjacent groups (`'a' 'b'`) as one array.
+    fn parse_quoted_array(&mut self) -> Value {
+        let open = self.advance();
+        let start = open.span.start;
+        let mut elements = Vec::new();
+        let mut end = open.span.end;
+        elements.push(ArrayElement::Quote(QuoteMark::new('\'', open.span)));
+        let mut expect_open = false;
+
+        loop {
+            if expect_open {
+                match self.peek().kind.clone() {
+                    TokenKind::Quote(_) => {
+                        let token = self.advance();
+                        end = token.span.end;
+                        elements.push(ArrayElement::Quote(QuoteMark::new('\'', token.span)));
+                        expect_open = false;
+                        continue;
+                    }
+                    _ => break,
+                }
+            }
+
+            match self.peek().kind.clone() {
+                TokenKind::Quote(_) => {
+                    let token = self.advance();
+                    end = token.span.end;
+                    elements.push(ArrayElement::Quote(QuoteMark::new('\'', token.span)));
+                    // Adjacent quoted groups concatenate, even when separated
+                    // by newlines (WASP's lexer gobbles newlines between
+                    // groups).
+                    let saved = self.pos;
+                    self.skip_newlines();
+                    if matches!(self.peek().kind, TokenKind::Quote(_)) {
+                        expect_open = true;
+                        continue;
+                    }
+                    self.pos = saved;
+                    break;
+                }
+                TokenKind::Semicolon => {
+                    let token = self.advance();
+                    end = token.span.end;
+                    elements.push(ArrayElement::Semicolon(token.span));
+                }
+                TokenKind::String(literal) => {
+                    let token = self.advance();
+                    end = token.span.end;
+                    elements.push(ArrayElement::Value(Value::quoted_string(
+                        literal.value,
+                        literal.raw,
+                        literal.quote,
+                        token.span,
+                    )));
+                }
+                TokenKind::Word(_) => {
+                    let value = self.parse_wasp_array_word();
+                    end = value.span.end;
+                    elements.push(ArrayElement::Value(value));
+                }
+                TokenKind::Equals
+                | TokenKind::Comma
+                | TokenKind::OverrideEquals => {
+                    let value = self.parse_wasp_array_word();
+                    end = value.span.end;
+                    elements.push(ArrayElement::Value(value));
+                }
+                TokenKind::Newline => {
+                    // Newlines inside a WASP array are not tokens to the
+                    // parser; consume them transparently.
+                    self.advance();
+                }
+                TokenKind::Eof => {
+                    self.diagnostics.push(Diagnostic::error(
+                        "unclosed-array",
+                        "unclosed quoted array; expected a closing quote",
+                        Span::new(start, end),
+                    ));
+                    break;
+                }
+                _ => {
+                    self.diagnostics.push(Diagnostic::error(
+                        "unexpected-token",
+                        format!(
+                            "unexpected {} inside a quoted array",
+                            self.peek().kind.describe()
+                        ),
+                        self.peek().span,
+                    ));
+                    self.advance();
+                }
+            }
+        }
+
+        Value::quoted_array(elements, Span::new(start, end))
+    }
+
+    /// Merge adjacent lexer tokens (`path/a`, `=`, `1`) back into one WASP
+    /// array-string value.
+    fn parse_wasp_array_word(&mut self) -> Value {
+        let first = self.advance();
+        let start = first.span.start;
+        let mut end = first.span.end;
+
+        while self.peek().span.start.offset == end.offset
+            && matches!(
+                self.peek().kind,
+                TokenKind::Word(_)
+                    | TokenKind::Equals
+                    | TokenKind::Comma
+                    | TokenKind::OverrideEquals
+            )
+        {
+            end = self.advance().span.end;
+        }
+
+        let raw = self.source[start.offset as usize..end.offset as usize].to_string();
+        classify_word(raw, Span::new(start, end))
+    }
+
+    /// Parse a single WASP value. Unlike the lenient mode, adjacent words are
+    /// not collected into a vector: WASP requires quotes for vectors.
+    fn parse_wasp_single_value(&mut self) -> Value {
+        let token = self.peek().clone();
+        match token.kind {
+            TokenKind::String(literal) => {
+                self.advance();
+                Value::quoted_string(literal.value, literal.raw, literal.quote, token.span)
+            }
+            TokenKind::Word(_)
+            | TokenKind::Equals
+            | TokenKind::Comma
+            | TokenKind::Semicolon => self.parse_wasp_word_value(),
+            TokenKind::LBracket => self.parse_bracket_array(),
+            _ => {
+                self.diagnostics.push(Diagnostic::error(
+                    "missing-value",
+                    format!("expected a value, found {}", token.kind.describe()),
+                    token.span,
+                ));
+                Value::missing(Span::point(token.span.start))
+            }
+        }
+    }
+
+    /// Reconstruct one WASP `VALUE_STRING`. WASP's value token starts with a
+    /// non-quote character and then consumes everything up to whitespace,
+    /// `[`, `]` or `#` -- including embedded quotes, `=`, `;` and commas.
+    /// `${...}` expressions may contain whitespace.
+    fn parse_wasp_word_value(&mut self) -> Value {
+        let start = self.peek().span.start;
+        let mut offset = start.offset as usize;
+        let bytes = self.source.as_bytes();
+
+        while offset < bytes.len() {
+            let ch = self.source[offset..].chars().next().unwrap_or('\0');
+            if ch == '$' && self.source[offset..].starts_with("${") {
+                offset += 2;
+                let mut depth = 1usize;
+                while offset < bytes.len() {
+                    let inner = self.source[offset..].chars().next().unwrap_or('\0');
+                    offset += inner.len_utf8();
+                    match inner {
+                        '{' => depth += 1,
+                        '}' => {
+                            depth -= 1;
+                            if depth == 0 {
+                                break;
+                            }
+                        }
+                        _ => {}
+                    }
+                }
+                continue;
+            }
+            if ch.is_whitespace() || matches!(ch, '[' | ']' | '#') {
+                break;
+            }
+            offset += ch.len_utf8();
+        }
+
+        let target = offset as u32;
+        let mut end = self.peek().span.end;
+        while self.peek().span.start.offset < target {
+            end = self.advance().span.end;
+        }
+        let raw = self.source[start.offset as usize..end.offset as usize].to_string();
+        classify_word(raw, Span::new(start, end))
     }
 
     fn parse_bracket_array(&mut self) -> Value {
@@ -673,6 +1093,20 @@ impl<'a> Parser<'a> {
         if !matches!(token.kind, TokenKind::Eof) {
             self.pos += 1;
         }
+        if self.wasp_compat {
+            if let Some(count) = self.wasp_recovery {
+                // Bison suppresses further syntax-error messages until three
+                // tokens have been shifted after an error. Newlines are
+                // discarded during recovery and do not count.
+                if !matches!(token.kind, TokenKind::Newline) {
+                    if count + 1 >= 3 {
+                        self.wasp_recovery = None;
+                    } else {
+                        self.wasp_recovery = Some(count + 1);
+                    }
+                }
+            }
+        }
         token
     }
 
@@ -748,7 +1182,14 @@ impl<'a> Parser<'a> {
     fn peek_starts_value(&self) -> bool {
         matches!(
             self.peek().kind,
-            TokenKind::Word(_) | TokenKind::String(_) | TokenKind::LBracket
+            TokenKind::Word(_)
+                | TokenKind::String(_)
+                | TokenKind::LBracket
+                | TokenKind::Quote(_)
+                | TokenKind::Equals
+                | TokenKind::Comma
+                | TokenKind::Semicolon
+                | TokenKind::OverrideEquals
         )
     }
 
@@ -764,7 +1205,11 @@ impl<'a> Parser<'a> {
                 self.is_close_header_ahead() && self.peek().span.start.line > last_end_line
             },
             TokenKind::Word(_) | TokenKind::String(_) => self.assignment_ahead(),
-            TokenKind::Equals | TokenKind::Comma => false,
+            TokenKind::Equals
+            | TokenKind::OverrideEquals
+            | TokenKind::Comma
+            | TokenKind::Semicolon
+            | TokenKind::Quote(_) => false,
         }
     }
 
@@ -836,8 +1281,25 @@ fn is_close_raw(raw: &str) -> bool {
     matches!(raw.trim(), "" | "." | ".." | "./" | "../")
 }
 
-fn classify_word(raw: String, span: Span) -> Value {
-    if raw.eq_ignore_ascii_case("true") {
+/// The token spelling bison uses in `syntax error, unexpected ...` messages.
+fn wasp_token_display(kind: &TokenKind) -> &'static str {
+    match kind {
+        TokenKind::Eof => "end of file",
+        TokenKind::Newline => "end of line",
+        TokenKind::Comment(_) => "comment",
+        TokenKind::LBracket => "[",
+        TokenKind::RBracket => "]",
+        TokenKind::Equals => "=",
+        TokenKind::OverrideEquals => ":=",
+        TokenKind::Comma => ",",
+        TokenKind::Semicolon => ";",
+        TokenKind::Quote(_) => "'",
+        TokenKind::String(_) => "quoted string",
+        TokenKind::Word(_) => "value string",
+    }
+}
+
+fn classify_word(raw: String, span: Span) -> Value {    if raw.eq_ignore_ascii_case("true") {
         return Value::boolean(true, span);
     }
     if raw.eq_ignore_ascii_case("false") {
@@ -1077,7 +1539,7 @@ mod tests {
             .iter()
             .filter_map(|element| match element {
                 ArrayElement::Value(value) => Some(value),
-                ArrayElement::Comment(_) => None,
+                _ => None,
             })
             .collect();
         assert_eq!(values.len(), 4);

@@ -26,12 +26,19 @@ pub enum TokenKind {
     LBracket,
     RBracket,
     Equals,
+    /// WASP's override assignment spelling (`:=` or `:override=`).
+    OverrideEquals,
     Comma,
+    /// A single quote in WASP-compat mode. Opens or closes a quoted array.
+    Quote(char),
+    /// A `;` inside a WASP-compat quoted array.
+    Semicolon,
     Newline,
     /// Comment text after `#` (the `#` itself is not included).
     Comment(String),
     String(StringLiteral),
-    /// Any unquoted run of non-delimiter characters.
+    /// Any unquoted run of non-delimiter characters. In WASP-compat mode this
+    /// may contain embedded `${...}` expressions, including spaces.
     Word(String),
     Eof,
 }
@@ -42,13 +49,31 @@ impl TokenKind {
             TokenKind::LBracket => "'['",
             TokenKind::RBracket => "']'",
             TokenKind::Equals => "'='",
+            TokenKind::OverrideEquals => "':='",
             TokenKind::Comma => "','",
+            TokenKind::Quote(_) => "'''",
+            TokenKind::Semicolon => "';'",
             TokenKind::Newline => "end of line",
             TokenKind::Comment(_) => "comment",
             TokenKind::String(_) => "string",
             TokenKind::Word(_) => "word",
             TokenKind::Eof => "end of file",
         }
+    }
+}
+
+/// Lexer behaviour switches.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub struct LexOptions {
+    /// Enable WASP HIT compatibility: single quotes delimit arrays, `;`
+    /// separates array values, `:=`/`:override=` are assignments and
+    /// `${...}` expressions are captured as opaque values.
+    pub wasp_compat: bool,
+}
+
+impl LexOptions {
+    pub const fn wasp() -> Self {
+        Self { wasp_compat: true }
     }
 }
 
@@ -59,9 +84,14 @@ pub struct Lexed {
     pub diagnostics: Vec<Diagnostic>,
 }
 
-/// Tokenize HIT source text.
+/// Tokenize HIT source text with the default (lenient) options.
 pub fn tokenize(source: &str) -> Lexed {
-    Lexer::new(source).run()
+    tokenize_with(source, LexOptions::default())
+}
+
+/// Tokenize HIT source text with explicit options.
+pub fn tokenize_with(source: &str, options: LexOptions) -> Lexed {
+    Lexer::new(source, options).run()
 }
 
 struct Lexer<'a> {
@@ -69,12 +99,14 @@ struct Lexer<'a> {
     pos: usize,
     line: u32,
     column: u32,
+    options: LexOptions,
+    in_array: bool,
     tokens: Vec<Token>,
     diagnostics: Vec<Diagnostic>,
 }
 
 impl<'a> Lexer<'a> {
-    fn new(source: &'a str) -> Self {
+    fn new(source: &'a str, options: LexOptions) -> Self {
         // Skip a UTF-8 byte-order mark without shifting the first token's
         // column. Offsets still refer to the original source bytes.
         let pos = if source.starts_with('\u{feff}') {
@@ -87,6 +119,8 @@ impl<'a> Lexer<'a> {
             pos,
             line: 1,
             column: 1,
+            options,
+            in_array: false,
             tokens: Vec::new(),
             diagnostics: Vec::new(),
         }
@@ -95,6 +129,10 @@ impl<'a> Lexer<'a> {
     fn run(mut self) -> Lexed {
         while let Some(ch) = self.peek() {
             let start = self.position();
+            if self.options.wasp_compat && self.in_array {
+                self.run_array_state(ch, start);
+                continue;
+            }
             match ch {
                 ' ' | '\t' | '\u{feff}' => {
                     self.bump();
@@ -137,9 +175,21 @@ impl<'a> Lexer<'a> {
                     self.bump();
                     self.push(TokenKind::Equals, start);
                 }
+                ':' if self.options.wasp_compat && self.starts_override_assign() => {
+                    self.lex_override_assign(start);
+                }
+                ';' if self.options.wasp_compat => {
+                    self.bump();
+                    self.push(TokenKind::Semicolon, start);
+                }
                 ',' => {
                     self.bump();
                     self.push(TokenKind::Comma, start);
+                }
+                '\'' if self.options.wasp_compat => {
+                    self.bump();
+                    self.in_array = true;
+                    self.push(TokenKind::Quote('\''), start);
                 }
                 '\'' | '"' => {
                     self.lex_string(ch, start);
@@ -190,7 +240,115 @@ impl<'a> Lexer<'a> {
     fn lex_word(&mut self, start: Position) {
         let word_start = self.pos;
         while let Some(ch) = self.peek() {
-            if is_word_delimiter(ch) {
+            if self.options.wasp_compat && ch == '$' && self.peek_next() == Some('{') {
+                self.scan_brace_expression();
+                continue;
+            }
+            let delimiter = if self.options.wasp_compat {
+                // WASP's VALUE_STRING may contain quotes after the first
+                // character; only the first character is restricted.
+                // A `:` that begins an override assignment terminates the
+                // preceding parameter name.
+                is_wasp_word_delimiter(ch) || (ch == ':' && self.starts_override_assign())
+            } else {
+                is_word_delimiter(ch)
+            };
+            if delimiter {
+                break;
+            }
+            self.bump();
+        }
+        let word = self.source[word_start..self.pos].to_string();
+        self.push(TokenKind::Word(word), start);
+    }
+
+    fn peek_next(&self) -> Option<char> {
+        let mut chars = self.source[self.pos..].chars();
+        chars.next()?;
+        chars.next()
+    }
+
+    fn starts_override_assign(&self) -> bool {
+        let rest = &self.source[self.pos..];
+        rest.starts_with(":=") || rest.starts_with(":override=")
+    }
+
+    fn lex_override_assign(&mut self, start: Position) {
+        while let Some(ch) = self.peek() {
+            self.bump();
+            if ch == '=' {
+                break;
+            }
+        }
+        self.push(TokenKind::OverrideEquals, start);
+    }
+
+    /// Consume `${ ... }`, including nested `${...}` and embedded whitespace.
+    /// The caller has already established that the cursor is on `$`.
+    fn scan_brace_expression(&mut self) {
+        self.bump(); // '$'
+        self.bump(); // '{'
+        let mut depth = 1usize;
+        while let Some(ch) = self.peek() {
+            match ch {
+                '{' => {
+                    depth += 1;
+                    self.bump();
+                }
+                '}' => {
+                    depth -= 1;
+                    self.bump();
+                    if depth == 0 {
+                        break;
+                    }
+                }
+                _ => {
+                    self.bump();
+                }
+            }
+        }
+    }
+
+    fn run_array_state(&mut self, ch: char, start: Position) {
+        match ch {
+            ' ' | '\t' | '\r' => {
+                self.bump();
+            }
+            '\n' => {
+                // WASP's lexer consumes newlines inside arrays.
+                self.bump();
+            }
+            '\'' => {
+                self.bump();
+                self.in_array = false;
+                self.push(TokenKind::Quote('\''), start);
+            }
+            ';' => {
+                self.bump();
+                self.push(TokenKind::Semicolon, start);
+            }
+            '"' => {
+                self.lex_string('"', start);
+            }
+            _ => {
+                self.lex_array_word(start);
+            }
+        }
+    }
+
+    fn lex_array_word(&mut self, start: Position) {
+        let word_start = self.pos;
+        while let Some(ch) = self.peek() {
+            if ch == '\\' && self.peek_next() == Some('\'') {
+                self.bump();
+                self.bump();
+                continue;
+            }
+            if ch == '$' && self.peek_next() == Some('{') {
+                self.scan_brace_expression();
+                continue;
+            }
+            if is_array_word_delimiter(ch) {
                 break;
             }
             self.bump();
@@ -271,11 +429,13 @@ impl<'a> Lexer<'a> {
                         // Preserve unknown escapes verbatim rather than failing.
                         value.push('\\');
                         value.push(other);
-                        self.diagnostics.push(Diagnostic::warning(
-                            "unknown-escape",
-                            format!("unknown escape sequence '\\{other}'"),
-                            Span::new(escape_start, self.position()),
-                        ));
+                        if !self.options.wasp_compat {
+                            self.diagnostics.push(Diagnostic::warning(
+                                "unknown-escape",
+                                format!("unknown escape sequence '\\{other}'"),
+                                Span::new(escape_start, self.position()),
+                            ));
+                        }
                     }
                     None => {
                         value.push('\\');
@@ -329,6 +489,22 @@ fn is_word_delimiter(ch: char) -> bool {
     ch.is_whitespace()
         || ch == '\u{feff}'
         || matches!(ch, '[' | ']' | '=' | ',' | '#' | '\'' | '"')
+}
+
+/// Delimiters inside a WASP single-quoted array. `=`, `#` and `$` are ordinary
+/// array-string characters there.
+fn is_array_word_delimiter(ch: char) -> bool {
+    ch.is_whitespace()
+        || ch == '\u{feff}'
+        || matches!(ch, '"' | ';' | '\'')
+}
+
+/// Delimiters for an unquoted WASP value string. Quotes are only special at
+/// the start of a token; after the first character they are ordinary text.
+fn is_wasp_word_delimiter(ch: char) -> bool {
+    ch.is_whitespace()
+        || ch == '\u{feff}'
+        || matches!(ch, '[' | ']' | '#' | '=' | ',')
 }
 
 #[cfg(test)]

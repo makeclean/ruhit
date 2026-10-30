@@ -210,6 +210,17 @@ pub struct Parameter {
     pub key_span: Span,
     #[cfg_attr(feature = "serde", serde(default))]
     pub value_span: Span,
+    /// True when the assignment used WASP's override spelling (`:=` or
+    /// `:override=`).
+    #[cfg_attr(feature = "serde", serde(default))]
+    pub override_assign: bool,
+    /// The assignment spelling as written: `=`, `:=` or `:override=`.
+    #[cfg_attr(feature = "serde", serde(default = "default_assign"))]
+    pub assign: String,
+}
+
+fn default_assign() -> String {
+    "=".to_string()
 }
 
 impl Parameter {
@@ -220,6 +231,8 @@ impl Parameter {
             span,
             key_span,
             value_span,
+            override_assign: false,
+            assign: default_assign(),
         }
     }
 
@@ -428,6 +441,22 @@ impl Value {
                 elements,
                 multiline,
                 trailing_comma,
+                quoted: false,
+            },
+            span,
+        )
+    }
+
+    /// A single-quoted WASP-style array (`'a b;c'`). Quote marks and
+    /// semicolons are retained as [`ArrayElement`]s so the original structure
+    /// round-trips and the conformance projection can report every part.
+    pub fn quoted_array(elements: Vec<ArrayElement>, span: Span) -> Self {
+        Self::new(
+            ValueKind::Array {
+                elements,
+                multiline: false,
+                trailing_comma: false,
+                quoted: true,
             },
             span,
         )
@@ -465,12 +494,12 @@ impl Value {
         }
     }
 
-    /// Values in an array, skipping comments.
+    /// Values in an array, skipping comments and structural markers.
     pub fn array_values(&self) -> Option<impl Iterator<Item = &Value>> {
         self.as_array().map(|elements| {
             elements.iter().filter_map(|element| match element {
                 ArrayElement::Value(value) => Some(value),
-                ArrayElement::Comment(_) => None,
+                _ => None,
             })
         })
     }
@@ -510,8 +539,8 @@ pub enum ValueKind {
     Boolean {
         value: bool,
     },
-    /// A bracket array (`[1, 2, 3]`) or an unquoted vector
-    /// (`values = 1 2 3`).
+    /// A bracket array (`[1, 2, 3]`), an unquoted vector
+    /// (`values = 1 2 3`), or a WASP single-quoted array (`'1 2 3'`).
     Array {
         #[cfg_attr(feature = "serde", serde(default))]
         elements: Vec<ArrayElement>,
@@ -519,12 +548,17 @@ pub enum ValueKind {
         multiline: bool,
         #[cfg_attr(feature = "serde", serde(default))]
         trailing_comma: bool,
+        /// True for WASP-style single-quoted arrays. Such arrays retain
+        /// [`ArrayElement::Quote`] and [`ArrayElement::Semicolon`] markers.
+        #[cfg_attr(feature = "serde", serde(default))]
+        quoted: bool,
     },
     /// Placeholder inserted after a syntax error so parsing can continue.
     Missing,
 }
 
-/// An array element: either a value or a comment that appeared between values.
+/// An array element: a value, a comment, or (for WASP-style quoted arrays) a
+/// structural quote or semicolon marker.
 ///
 /// Array elements use external tagging (`{"value": {...}}` /
 /// `{"comment": {...}}`) so the `kind` tag of a nested [`Value`] can stay
@@ -535,6 +569,26 @@ pub enum ValueKind {
 pub enum ArrayElement {
     Value(Value),
     Comment(Comment),
+    /// An opening or closing single quote in a WASP-style array.
+    Quote(QuoteMark),
+    /// A `;` separator in a WASP-style array.
+    Semicolon(Span),
+}
+
+/// A single quote mark retained as an array part.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[cfg_attr(feature = "serde", serde(rename_all = "camelCase"))]
+pub struct QuoteMark {
+    pub mark: char,
+    #[cfg_attr(feature = "serde", serde(default))]
+    pub span: Span,
+}
+
+impl QuoteMark {
+    pub fn new(mark: char, span: Span) -> Self {
+        Self { mark, span }
+    }
 }
 
 impl ArrayElement {
@@ -542,6 +596,15 @@ impl ArrayElement {
         match self {
             ArrayElement::Value(value) => value.span,
             ArrayElement::Comment(comment) => comment.span,
+            ArrayElement::Quote(quote) => quote.span,
+            ArrayElement::Semicolon(span) => *span,
+        }
+    }
+
+    pub fn as_value(&self) -> Option<&Value> {
+        match self {
+            ArrayElement::Value(value) => Some(value),
+            _ => None,
         }
     }
 }

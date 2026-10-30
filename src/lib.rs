@@ -27,7 +27,7 @@ pub mod parser;
 pub mod serializer;
 
 pub use ast::*;
-pub use parser::{parse, validate};
+pub use parser::{parse, parse_with_options, validate, ParseOptions};
 pub use serializer::{serialize, serialize_with_options, FormatOptions};
 
 /// WASM bindings. Enabled with the `wasm` feature.

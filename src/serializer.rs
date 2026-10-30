@@ -105,13 +105,19 @@ impl<'a> Serializer<'a> {
 
     fn write_parameter(&mut self, parameter: &Parameter, level: usize) {
         let key = format_key(&parameter.key);
+        if parameter.assign.is_empty() {
+            // Malformed input that never had an assignment.
+            self.push_line(level, &key);
+            return;
+        }
+        let assign = parameter.assign.as_str();
         if parameter.value.is_missing() {
-            self.push_line(level, &format!("{key} ="));
+            self.push_line(level, &format!("{key} {assign}"));
             return;
         }
 
         if self.value_needs_multiline(&parameter.value) {
-            self.push_line(level, &format!("{key} = ["));
+            self.push_line(level, &format!("{key} {assign} ["));
             if let ValueKind::Array {
                 elements,
                 trailing_comma,
@@ -123,7 +129,7 @@ impl<'a> Serializer<'a> {
             self.push_line(level, "]");
         } else {
             let value = self.format_value(&parameter.value);
-            self.push_line(level, &format!("{key} = {value}"));
+            self.push_line(level, &format!("{key} {assign} {value}"));
         }
     }
 
@@ -157,6 +163,7 @@ impl<'a> Serializer<'a> {
                         );
                     }
                 }
+                ArrayElement::Quote(_) | ArrayElement::Semicolon(_) => {}
             }
         }
     }
@@ -223,13 +230,17 @@ impl<'a> Serializer<'a> {
             ValueKind::Array {
                 elements,
                 trailing_comma,
+                quoted,
                 ..
             } => {
+                if *quoted {
+                    return format_quoted_array(elements, |value| self.format_value(value));
+                }
                 let values: Vec<String> = elements
                     .iter()
                     .filter_map(|element| match element {
                         ArrayElement::Value(value) => Some(self.format_value(value)),
-                        ArrayElement::Comment(_) => None,
+                        _ => None,
                     })
                     .collect();
                 let trailing = if *trailing_comma && !values.is_empty() {
@@ -248,19 +259,65 @@ impl<'a> Serializer<'a> {
             ValueKind::Array {
                 elements,
                 multiline,
+                quoted,
                 ..
             } => {
+                if *quoted {
+                    return false;
+                }
                 if *multiline {
                     return true;
                 }
                 elements.iter().any(|element| match element {
                     ArrayElement::Comment(_) => true,
                     ArrayElement::Value(value) => self.value_needs_multiline(value),
+                    ArrayElement::Quote(_) | ArrayElement::Semicolon(_) => false,
                 })
             }
             _ => false,
         }
     }
+}
+
+fn format_quoted_array<F>(elements: &[ArrayElement], format_value: F) -> String
+where
+    F: Fn(&Value) -> String,
+{
+    let mut output = String::new();
+    let mut quote_open = false;
+    let mut previous_was_value = false;
+
+    for element in elements {
+        match element {
+            ArrayElement::Quote(quote) => {
+                if quote_open {
+                    output.push(quote.mark);
+                    quote_open = false;
+                } else {
+                    if !output.is_empty() {
+                        output.push(' ');
+                    }
+                    output.push(quote.mark);
+                    quote_open = true;
+                }
+                previous_was_value = false;
+            }
+            ArrayElement::Semicolon(_) => {
+                output.push(';');
+                previous_was_value = false;
+            }
+            ArrayElement::Value(value) => {
+                if previous_was_value {
+                    output.push(' ');
+                }
+                output.push_str(&format_value(value));
+                previous_was_value = true;
+            }
+            ArrayElement::Comment(_) => {}
+        }
+    }
+
+    output
 }
 
 fn format_key(key: &str) -> String {
