@@ -1,0 +1,28 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/key",
+      "name": "key",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3.421",
+          "valueType": "real"
+        }
+      ],
+      "value": "3.421",
+      "valueType": "real",
+      "line": 1,
+      "column": 1
+    }
+  ]
+}

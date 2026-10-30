@@ -1,0 +1,47 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 1,
+      "message": "unclosed block 'ted'; expected a closing header",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "ted",
+      "kind": "block",
+      "line": 1,
+      "name": "ted",
+      "path": "/ted"
+    },
+    {
+      "assign": "=",
+      "column": 6,
+      "kind": "array",
+      "line": 1,
+      "name": "key",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "3.421",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "",
+          "valueType": "array"
+        }
+      ],
+      "path": "/ted/key"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

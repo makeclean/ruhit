@@ -1,0 +1,44 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Problem",
+      "kind": "block",
+      "line": 1,
+      "name": "Problem",
+      "path": "/Problem"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 2,
+      "name": "coord_type",
+      "override": false,
+      "path": "/Problem/coord_type",
+      "value": "RZ",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "RZ",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "./child",
+      "kind": "block",
+      "line": 3,
+      "name": "child",
+      "path": "/Problem/child"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

@@ -1,0 +1,36 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 4,
+      "column": 7,
+      "message": "could not find 'block_missing.i'"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "include",
+      "path": "/incl",
+      "name": "incl",
+      "text": "!include block_missing.i",
+      "target": "block_missing.i",
+      "line": 4,
+      "column": 7
+    },
+    {
+      "kind": "include",
+      "path": "/incl/decl",
+      "name": "decl",
+      "text": "!include",
+      "target": "",
+      "line": 4,
+      "column": 7
+    }
+  ]
+}

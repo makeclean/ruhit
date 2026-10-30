@@ -1,0 +1,164 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/3",
+      "name": "3",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "a",
+          "valueType": "string"
+        }
+      ],
+      "value": "a",
+      "valueType": "string",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/3.1",
+      "name": "3.1",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "b",
+          "valueType": "string"
+        }
+      ],
+      "value": "b",
+      "valueType": "string",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/1e2",
+      "name": "1e2",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "c",
+          "valueType": "string"
+        }
+      ],
+      "value": "c",
+      "valueType": "string",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/3.e1",
+      "name": "3.e1",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "d",
+          "valueType": "string"
+        }
+      ],
+      "value": "d",
+      "valueType": "string",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/3.2e3",
+      "name": "3.2e3",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "e",
+          "valueType": "string"
+        }
+      ],
+      "value": "e",
+      "valueType": "string",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/-3",
+      "name": "-3",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "f",
+          "valueType": "string"
+        }
+      ],
+      "value": "f",
+      "valueType": "string",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/-3.E1",
+      "name": "-3.E1",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "g",
+          "valueType": "string"
+        }
+      ],
+      "value": "g",
+      "valueType": "string",
+      "line": 8,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/-3.2E2",
+      "name": "-3.2E2",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "h",
+          "valueType": "string"
+        }
+      ],
+      "value": "h",
+      "valueType": "string",
+      "line": 9,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/1e23.3",
+      "name": "1e23.3",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "i",
+          "valueType": "string"
+        }
+      ],
+      "value": "i",
+      "valueType": "string",
+      "line": 10,
+      "column": 5
+    }
+  ]
+}

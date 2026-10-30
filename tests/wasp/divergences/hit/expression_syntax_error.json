@@ -1,0 +1,43 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 2,
+      "message": "syntax error, unexpected end of file, expecting block terminator",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Simple",
+      "kind": "block",
+      "line": 2,
+      "name": "Simple",
+      "path": "/Simple"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 3,
+      "name": "foo01",
+      "override": false,
+      "path": "/Simple/foo01",
+      "value": "${fparse 42\n  foo02='${fparse 42}'\n[]\n",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "${fparse 42\n  foo02='${fparse 42}'\n[]\n",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

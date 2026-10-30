@@ -1,0 +1,53 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/ted",
+      "name": "ted",
+      "header": "ted",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/ted/data",
+      "name": "data",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "basic",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "201",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "lu",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 1,
+      "column": 6
+    }
+  ]
+}

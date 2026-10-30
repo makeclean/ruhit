@@ -1,0 +1,10 @@
+{
+  "combined": "ruhit HIVE validation is not implemented yet\n",
+  "errors": [
+    "ruhit HIVE validation is not implemented yet"
+  ],
+  "failParse": true,
+  "passParse": true,
+  "suite": "hive",
+  "valid": false
+}

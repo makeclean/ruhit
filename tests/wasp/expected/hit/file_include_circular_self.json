@@ -1,0 +1,61 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "./input02.i",
+      "line": 3,
+      "column": 3,
+      "message": "file include would create circular reference 'input02.i'"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Block01",
+      "name": "Block01",
+      "header": "Block01",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "include",
+      "path": "/Block01/incl",
+      "name": "incl",
+      "text": "!include input02.i",
+      "target": "input02.i",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/Block01/Block02",
+      "name": "Block02",
+      "header": "Block02",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "include",
+      "path": "/Block01/Block02/incl",
+      "name": "incl",
+      "text": "!include input02.i",
+      "target": "input02.i",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "include",
+      "path": "/Block01/Block02/incl/decl",
+      "name": "decl",
+      "text": "!include",
+      "target": "",
+      "line": 3,
+      "column": 3
+    }
+  ]
+}

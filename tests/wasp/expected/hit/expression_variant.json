@@ -1,0 +1,28 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/G2",
+      "name": "G2",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${fparse ${units 505.97 J/(kg*K) -> eV/(g*K)}*ru0*(Temp_-Theta_e_mb)}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${fparse ${units 505.97 J/(kg*K) -> eV/(g*K)}*ru0*(Temp_-Theta_e_mb)}",
+      "valueType": "string",
+      "line": 1,
+      "column": 1
+    }
+  ]
+}

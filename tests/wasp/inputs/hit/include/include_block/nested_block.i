@@ -1,0 +1,1 @@
+[nested_block]   key = 3[]

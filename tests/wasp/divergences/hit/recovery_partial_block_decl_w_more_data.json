@@ -1,0 +1,136 @@
+{
+  "diagnostics": [
+    {
+      "column": 5,
+      "line": 10,
+      "message": "expected ']' to close block header",
+      "source": "stream input"
+    },
+    {
+      "column": 1,
+      "line": 12,
+      "message": "syntax error, unexpected end of file",
+      "source": "stream input"
+    },
+    {
+      "column": 3,
+      "line": 8,
+      "message": "syntax error, unexpected end of file, expecting block terminator",
+      "source": "stream input"
+    },
+    {
+      "column": 1,
+      "line": 6,
+      "message": "syntax error, unexpected end of file, expecting block terminator",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "block1",
+      "kind": "block",
+      "line": 1,
+      "name": "block1",
+      "path": "/block1"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 2,
+      "name": "foo1",
+      "override": false,
+      "path": "/block1/foo1",
+      "value": "bar1",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "bar1",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 3,
+      "name": "foo2",
+      "override": false,
+      "path": "/block1/foo2",
+      "value": "bar2",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "bar2",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "block2",
+      "kind": "block",
+      "line": 6,
+      "name": "block2",
+      "path": "/block2"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 7,
+      "name": "foo3",
+      "override": false,
+      "path": "/block2/foo3",
+      "value": "bar3",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "bar3",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "block3",
+      "kind": "block",
+      "line": 8,
+      "name": "block3",
+      "path": "/block2/block3"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 9,
+      "name": "foo4",
+      "override": false,
+      "path": "/block2/block3/foo4",
+      "value": "bar4",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "bar4",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 5,
+      "header": "blo",
+      "kind": "block",
+      "line": 10,
+      "name": "blo",
+      "path": "/block2/block3/blo"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

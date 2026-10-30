@@ -1,0 +1,79 @@
+{
+  "diagnostics": [
+    {
+      "column": 12,
+      "line": 4,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Block01",
+      "kind": "block",
+      "line": 2,
+      "name": "Block01",
+      "path": "/Block01"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 3,
+      "name": "param01a",
+      "override": false,
+      "path": "/Block01/param01a",
+      "value": "11",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "11",
+          "valueType": "integer"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "kind": "include",
+      "line": 4,
+      "name": "incl",
+      "path": "/Block01/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 12,
+      "kind": "parameter",
+      "line": 4,
+      "name": "input_incl.i",
+      "override": false,
+      "path": "/Block01/input_incl.i",
+      "values": []
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 5,
+      "name": "param01d",
+      "override": false,
+      "path": "/Block01/param01d",
+      "value": "14",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "14",
+          "valueType": "integer"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

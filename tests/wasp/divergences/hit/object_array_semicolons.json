@@ -1,0 +1,66 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "ted",
+      "kind": "block",
+      "line": 1,
+      "name": "ted",
+      "path": "/ted"
+    },
+    {
+      "assign": "=",
+      "column": 6,
+      "kind": "array",
+      "line": 1,
+      "name": "data",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "basic;201",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "again;here;close",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "far",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "lu",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/ted/data"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

@@ -1,0 +1,35 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "array",
+      "path": "/foo",
+      "name": "foo",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "bar",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 2,
+      "column": 3
+    }
+  ]
+}

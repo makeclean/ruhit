@@ -1,0 +1,185 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Problem",
+      "name": "Problem",
+      "header": "Problem",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/Problem/comment",
+      "text": "# Specify coordinate system type",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/Problem/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "ted",
+          "valueType": "string"
+        }
+      ],
+      "value": "ted",
+      "valueType": "string",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/Problem/s1",
+      "name": "s1",
+      "header": "s1",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/Problem/s1/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "fred",
+          "valueType": "string"
+        }
+      ],
+      "value": "fred",
+      "valueType": "string",
+      "line": 4,
+      "column": 12
+    },
+    {
+      "kind": "block",
+      "path": "/Problem/s2",
+      "name": "s2",
+      "header": "s2",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/Problem/s2/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "x",
+          "valueType": "string"
+        }
+      ],
+      "value": "x",
+      "valueType": "string",
+      "line": 5,
+      "column": 12
+    },
+    {
+      "kind": "parameter",
+      "path": "/Problem/s2/y",
+      "name": "y",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "1",
+          "valueType": "integer"
+        }
+      ],
+      "value": "1",
+      "valueType": "integer",
+      "line": 5,
+      "column": 22
+    },
+    {
+      "kind": "block",
+      "path": "/p1",
+      "name": "p1",
+      "header": "p1",
+      "line": 7,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/p1/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "t1",
+          "valueType": "string"
+        }
+      ],
+      "value": "t1",
+      "valueType": "string",
+      "line": 8,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/p2",
+      "name": "p2",
+      "header": "p2",
+      "line": 10,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/p2/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "t2",
+          "valueType": "string"
+        }
+      ],
+      "value": "t2",
+      "valueType": "string",
+      "line": 11,
+      "column": 4
+    },
+    {
+      "kind": "block",
+      "path": "/p2/s3",
+      "name": "s3",
+      "header": "s3",
+      "line": 12,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/p2/s3/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "us3",
+          "valueType": "string"
+        }
+      ],
+      "value": "us3",
+      "valueType": "string",
+      "line": 13,
+      "column": 9
+    }
+  ]
+}

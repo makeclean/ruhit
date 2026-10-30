@@ -1,0 +1,96 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/k1",
+      "name": "k1",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "x_${a}_y_${b}_z",
+          "valueType": "string"
+        }
+      ],
+      "value": "x_${a}_y_${b}_z",
+      "valueType": "string",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/k2",
+      "name": "k2",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${a}_y_${b}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${a}_y_${b}",
+      "valueType": "string",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/k3",
+      "name": "k3",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${a}_y_${b}${c}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${a}_y_${b}${c}",
+      "valueType": "string",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/k4",
+      "name": "k4",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${a}_y_${b}${c}_z",
+          "valueType": "string"
+        }
+      ],
+      "value": "${a}_y_${b}${c}_z",
+      "valueType": "string",
+      "line": 4,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/value",
+      "name": "value",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "(1.0/2.0)*(eps*eps*(-grad_grad_p_x+${gx}*grad_rho_x)+2.0*eps*grad_eps*(-grad_p_x+rho*${gx}sdfs))",
+          "valueType": "string"
+        }
+      ],
+      "value": "(1.0/2.0)*(eps*eps*(-grad_grad_p_x+${gx}*grad_rho_x)+2.0*eps*grad_eps*(-grad_p_x+rho*${gx}sdfs))",
+      "valueType": "string",
+      "line": 5,
+      "column": 1
+    }
+  ]
+}

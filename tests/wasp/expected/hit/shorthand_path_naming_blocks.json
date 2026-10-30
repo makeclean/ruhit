@@ -1,0 +1,250 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/a",
+      "name": "a",
+      "header": "a",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/a/b",
+      "name": "b",
+      "header": "b",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c",
+      "name": "c",
+      "header": "a/b/c",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/param_outer",
+      "name": "param_outer",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar_outer",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar_outer",
+      "valueType": "string",
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c/x",
+      "name": "x",
+      "header": "x",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c/x/y",
+      "name": "y",
+      "header": "y",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c/x/y/z",
+      "name": "z",
+      "header": "x/y/z",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/x/y/z/param_inner",
+      "name": "param_inner",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar_inner",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar_inner",
+      "valueType": "string",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/a",
+      "name": "a",
+      "header": "a",
+      "line": 10,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/a/b",
+      "name": "b",
+      "header": "b",
+      "line": 10,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c",
+      "name": "c",
+      "header": "a/b/c",
+      "line": 10,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "foo_outer",
+          "valueType": "string"
+        }
+      ],
+      "value": "foo_outer",
+      "valueType": "string",
+      "line": 11,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/param_outer",
+      "name": "param_outer",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar_outer",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar_outer",
+      "valueType": "string",
+      "line": 12,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c/x",
+      "name": "x",
+      "header": "x",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c/x/y",
+      "name": "y",
+      "header": "y",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c/x/y/z",
+      "name": "z",
+      "header": "x/y/z",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/x/y/z/type",
+      "name": "type",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "foo_inner",
+          "valueType": "string"
+        }
+      ],
+      "value": "foo_inner",
+      "valueType": "string",
+      "line": 14,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/x/y/z/param_inner",
+      "name": "param_inner",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar_inner",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar_inner",
+      "valueType": "string",
+      "line": 15,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/a",
+      "name": "a",
+      "header": "a",
+      "line": 19,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/a/b",
+      "name": "b",
+      "header": "b",
+      "line": 19,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/a/b/c",
+      "name": "c",
+      "header": "/a/b///c//",
+      "line": 19,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/a/b/c/param",
+      "name": "param",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar",
+      "valueType": "string",
+      "line": 20,
+      "column": 3
+    }
+  ]
+}

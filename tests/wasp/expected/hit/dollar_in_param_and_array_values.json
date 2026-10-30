@@ -1,0 +1,842 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/DollarSingleValueParams",
+      "name": "DollarSingleValueParams",
+      "header": "DollarSingleValueParams",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param01",
+      "name": "param01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "$misc-\\w+",
+          "valueType": "string"
+        }
+      ],
+      "value": "$misc-\\w+",
+      "valueType": "string",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param02",
+      "name": "param02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "misc$-\\w+",
+          "valueType": "string"
+        }
+      ],
+      "value": "misc$-\\w+",
+      "valueType": "string",
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param03",
+      "name": "param03",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "$mis-\\w+$",
+          "valueType": "string"
+        }
+      ],
+      "value": "$mis-\\w+$",
+      "valueType": "string",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param04",
+      "name": "param04",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "misc-\\w+$",
+          "valueType": "string"
+        }
+      ],
+      "value": "misc-\\w+$",
+      "valueType": "string",
+      "line": 6,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param05",
+      "name": "param05",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "{misc-\\w+",
+          "valueType": "string"
+        }
+      ],
+      "value": "{misc-\\w+",
+      "valueType": "string",
+      "line": 8,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param06",
+      "name": "param06",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "misc{-\\w+",
+          "valueType": "string"
+        }
+      ],
+      "value": "misc{-\\w+",
+      "valueType": "string",
+      "line": 9,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param07",
+      "name": "param07",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "m`i$.{c}*",
+          "valueType": "string"
+        }
+      ],
+      "value": "m`i$.{c}*",
+      "valueType": "string",
+      "line": 10,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param08",
+      "name": "param08",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "{isc-\\w+{",
+          "valueType": "string"
+        }
+      ],
+      "value": "{isc-\\w+{",
+      "valueType": "string",
+      "line": 11,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param09",
+      "name": "param09",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "}misc-\\w+",
+          "valueType": "string"
+        }
+      ],
+      "value": "}misc-\\w+",
+      "valueType": "string",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param10",
+      "name": "param10",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "misc}-\\w+",
+          "valueType": "string"
+        }
+      ],
+      "value": "misc}-\\w+",
+      "valueType": "string",
+      "line": 14,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param11",
+      "name": "param11",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "$}sc-\\w+}",
+          "valueType": "string"
+        }
+      ],
+      "value": "$}sc-\\w+}",
+      "valueType": "string",
+      "line": 15,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param12",
+      "name": "param12",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "misc-\\w+}",
+          "valueType": "string"
+        }
+      ],
+      "value": "misc-\\w+}",
+      "valueType": "string",
+      "line": 16,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param13",
+      "name": "param13",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "trailing-single-space$",
+          "valueType": "string"
+        }
+      ],
+      "value": "trailing-single-space$",
+      "valueType": "string",
+      "line": 18,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DollarSingleValueParams/param14",
+      "name": "param14",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "trailing-comment-char$",
+          "valueType": "string"
+        }
+      ],
+      "value": "trailing-comment-char$",
+      "valueType": "string",
+      "line": 19,
+      "column": 3
+    },
+    {
+      "kind": "comment",
+      "path": "/DollarSingleValueParams/comment",
+      "text": "# comment here",
+      "line": 19,
+      "column": 35
+    },
+    {
+      "kind": "block",
+      "path": "/DollarSingleValueArrays",
+      "name": "DollarSingleValueArrays",
+      "header": "DollarSingleValueArrays",
+      "line": 21,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array01",
+      "name": "array01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "$misc-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 22,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array02",
+      "name": "array02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "misc$-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 23,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array03",
+      "name": "array03",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "$ms-\\w+$",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 24,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array04",
+      "name": "array04",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "misc-\\w+$",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 25,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array05",
+      "name": "array05",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "{misc-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 27,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array06",
+      "name": "array06",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "misc{-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 28,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array07",
+      "name": "array07",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "m`i$.{c}*",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 29,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array08",
+      "name": "array08",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "{isc-\\w+{",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 30,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array09",
+      "name": "array09",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "}misc-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 32,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array10",
+      "name": "array10",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "misc}-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 33,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array11",
+      "name": "array11",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "$}sc-\\w+}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 34,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array12",
+      "name": "array12",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "misc-\\w+}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 35,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array13",
+      "name": "array13",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "trailing-single-space$",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 37,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarSingleValueArrays/array14",
+      "name": "array14",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "trailing-comment-char$#",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "comment",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "here",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 38,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/DollarMultiValuesArrays",
+      "name": "DollarMultiValuesArrays",
+      "header": "DollarMultiValuesArrays",
+      "line": 40,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/DollarMultiValuesArrays/array01",
+      "name": "array01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "$misc-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "misc$-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "$mis-\\w+$ misc-\\w+$",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 41,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarMultiValuesArrays/array02",
+      "name": "array02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "{misc-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "misc{-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "misc-{+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "$ {isc-\\w+}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 42,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarMultiValuesArrays/array03",
+      "name": "array03",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "}misc-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "misc}-\\w+",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "$}sc-\\w+}",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "misc-\\w+}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 43,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DollarMultiValuesArrays/command",
+      "name": "command",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "for",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "bin",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "in",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "`ls",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "../../../dir/app_exe-*`",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "do",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "cat",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "dir$",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "echo",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "$env",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "cd",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "..",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "ln",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "-sf",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "$bin",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": ".",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "done",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 44,
+      "column": 3
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "DoubleQuotesInArrays",
+      "kind": "block",
+      "line": 2,
+      "name": "DoubleQuotesInArrays",
+      "path": "/DoubleQuotesInArrays"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 3,
+      "name": "array01",
+      "override": false,
+      "path": "/DoubleQuotesInArrays/array01",
+      "value": "'one two=\"foo bar \"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'one two=\"foo bar \"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 4,
+      "name": "array02",
+      "override": false,
+      "path": "/DoubleQuotesInArrays/array02",
+      "value": "'one two=\"foo bar;\"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'one two=\"foo bar;\"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 5,
+      "name": "array03",
+      "override": false,
+      "path": "/DoubleQuotesInArrays/array03",
+      "value": "'one two\"foo bar \"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'one two\"foo bar \"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 6,
+      "name": "array04",
+      "override": false,
+      "path": "/DoubleQuotesInArrays/array04",
+      "value": "'one two\"foo bar;\"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'one two\"foo bar;\"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 7,
+      "name": "array05",
+      "override": false,
+      "path": "/DoubleQuotesInArrays/array05",
+      "value": "'one two \"foo bar \"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'one two \"foo bar \"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 8,
+      "name": "array06",
+      "override": false,
+      "path": "/DoubleQuotesInArrays/array06",
+      "value": "'one two \"foo bar;\"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'one two \"foo bar;\"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

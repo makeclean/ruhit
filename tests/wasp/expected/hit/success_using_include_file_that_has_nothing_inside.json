@@ -1,0 +1,62 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Block01",
+      "name": "Block01",
+      "header": "Block01",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/param01a",
+      "name": "param01a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "11",
+          "valueType": "integer"
+        }
+      ],
+      "value": "11",
+      "valueType": "integer",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "include",
+      "path": "/Block01/incl",
+      "name": "incl",
+      "text": "!include input_incl.i",
+      "target": "input_incl.i",
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/param01b",
+      "name": "param01b",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "12",
+          "valueType": "integer"
+        }
+      ],
+      "value": "12",
+      "valueType": "integer",
+      "line": 5,
+      "column": 3
+    }
+  ]
+}

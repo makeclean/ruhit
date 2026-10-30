@@ -1,0 +1,28 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 2,
+      "name": "foo",
+      "override": false,
+      "path": "/foo",
+      "value": "'bar'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'bar'",
+          "valueType": "quoted-string"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

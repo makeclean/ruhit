@@ -1,0 +1,45 @@
+{
+  "diagnostics": [
+    {
+      "column": 18,
+      "line": 3,
+      "message": "expected '=' after parameter name '2'",
+      "source": "stream input"
+    },
+    {
+      "column": 13,
+      "line": 4,
+      "message": "expected '=' after parameter name '}'",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "array",
+      "line": 2,
+      "name": "param_name",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "${raw",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "4",
+          "valueType": "integer"
+        }
+      ],
+      "path": "/param_name"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

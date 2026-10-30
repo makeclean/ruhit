@@ -1,0 +1,26 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 8,
+      "message": "syntax error, unexpected invalid token, expecting ]"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/object",
+      "name": "object",
+      "header": "object",
+      "line": 2,
+      "column": 1
+    }
+  ]
+}

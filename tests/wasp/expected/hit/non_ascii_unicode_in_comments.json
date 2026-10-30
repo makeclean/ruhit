@@ -1,0 +1,171 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "######################################################################",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "##                                                                  ##",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "## Lead off comment with non-ascii unicode degree symbol 600°C      ##",
+      "line": 4,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "## Lead off comment with non-ascii unicode “L&R double quotes”      ##",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "## Lead off comment with non-ascii unicode ‘L&R single quotes’      ##",
+      "line": 6,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "## Lead off comment with non-ascii unicode en dash – character      ##",
+      "line": 7,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "##                                                                  ##",
+      "line": 8,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "######################################################################",
+      "line": 9,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/ObjName",
+      "name": "ObjName",
+      "header": "ObjName",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/ObjName/Param01",
+      "name": "Param01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val01",
+          "valueType": "string"
+        }
+      ],
+      "value": "val01",
+      "valueType": "string",
+      "line": 12,
+      "column": 3
+    },
+    {
+      "kind": "comment",
+      "path": "/ObjName/comment",
+      "text": "# trailing comment with non-ascii unicode degree symbol 600°C",
+      "line": 12,
+      "column": 19
+    },
+    {
+      "kind": "parameter",
+      "path": "/ObjName/Param02",
+      "name": "Param02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val02",
+          "valueType": "string"
+        }
+      ],
+      "value": "val02",
+      "valueType": "string",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "comment",
+      "path": "/ObjName/comment",
+      "text": "# trailing comment with non-ascii unicode “L&R double quotes”",
+      "line": 13,
+      "column": 19
+    },
+    {
+      "kind": "parameter",
+      "path": "/ObjName/Param03",
+      "name": "Param03",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val03",
+          "valueType": "string"
+        }
+      ],
+      "value": "val03",
+      "valueType": "string",
+      "line": 14,
+      "column": 3
+    },
+    {
+      "kind": "comment",
+      "path": "/ObjName/comment",
+      "text": "# trailing comment with non-ascii unicode ‘L&R single quotes’",
+      "line": 14,
+      "column": 19
+    },
+    {
+      "kind": "parameter",
+      "path": "/ObjName/Param04",
+      "name": "Param04",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val04",
+          "valueType": "string"
+        }
+      ],
+      "value": "val04",
+      "valueType": "string",
+      "line": 15,
+      "column": 3
+    },
+    {
+      "kind": "comment",
+      "path": "/ObjName/comment",
+      "text": "# trailing comment with non-ascii unicode en dash – character",
+      "line": 15,
+      "column": 19
+    }
+  ]
+}

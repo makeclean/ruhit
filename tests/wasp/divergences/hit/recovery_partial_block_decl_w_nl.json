@@ -1,0 +1,32 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 1,
+      "message": "expected ']' to close block header",
+      "source": "stream input"
+    },
+    {
+      "column": 1,
+      "line": 2,
+      "message": "syntax error, unexpected end of file",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "blo",
+      "kind": "block",
+      "line": 1,
+      "name": "blo",
+      "path": "/blo"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

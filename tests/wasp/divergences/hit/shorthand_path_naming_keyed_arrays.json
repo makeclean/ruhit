@@ -1,0 +1,133 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "path",
+      "kind": "block",
+      "line": 3,
+      "name": "path",
+      "path": "/path"
+    },
+    {
+      "column": 1,
+      "header": "to",
+      "kind": "block",
+      "line": 3,
+      "name": "to",
+      "path": "/path/to"
+    },
+    {
+      "column": 1,
+      "header": "array",
+      "kind": "block",
+      "line": 3,
+      "name": "array",
+      "path": "/path/to/array"
+    },
+    {
+      "column": 1,
+      "header": "inner",
+      "kind": "block",
+      "line": 3,
+      "name": "inner",
+      "path": "/path/to/array/inner"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 3,
+      "name": "01",
+      "override": false,
+      "path": "/path/to/array/inner/01",
+      "value": "'\"eleven\" \"twelve\" \"thirteen\"'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'\"eleven\" \"twelve\" \"thirteen\"'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "path",
+      "kind": "block",
+      "line": 5,
+      "name": "path",
+      "path": "/path"
+    },
+    {
+      "column": 1,
+      "header": "to",
+      "kind": "block",
+      "line": 5,
+      "name": "to",
+      "path": "/path/to"
+    },
+    {
+      "column": 1,
+      "header": "//path/to///object/",
+      "kind": "block",
+      "line": 5,
+      "name": "object",
+      "path": "/path/to/object"
+    },
+    {
+      "column": 3,
+      "header": "path",
+      "kind": "block",
+      "line": 7,
+      "name": "path",
+      "path": "/path/to/object/path"
+    },
+    {
+      "column": 3,
+      "header": "to",
+      "kind": "block",
+      "line": 7,
+      "name": "to",
+      "path": "/path/to/object/path/to"
+    },
+    {
+      "column": 3,
+      "header": "array",
+      "kind": "block",
+      "line": 7,
+      "name": "array",
+      "path": "/path/to/object/path/to/array"
+    },
+    {
+      "column": 3,
+      "header": "inner",
+      "kind": "block",
+      "line": 7,
+      "name": "inner",
+      "path": "/path/to/object/path/to/array/inner"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 7,
+      "name": "02",
+      "override": false,
+      "path": "/path/to/object/path/to/array/inner/02",
+      "value": "'2.2 3.3 4.4'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'2.2 3.3 4.4'",
+          "valueType": "quoted-string"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

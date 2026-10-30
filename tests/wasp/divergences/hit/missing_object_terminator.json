@@ -1,0 +1,90 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 2,
+      "message": "unclosed block 'one'; expected a closing header",
+      "source": "stream input"
+    },
+    {
+      "column": 1,
+      "line": 1,
+      "message": "unclosed block 'GlobalParams'; expected a closing header",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "GlobalParams",
+      "kind": "block",
+      "line": 1,
+      "name": "GlobalParams",
+      "path": "/GlobalParams"
+    },
+    {
+      "column": 1,
+      "header": "one",
+      "kind": "block",
+      "line": 2,
+      "name": "one",
+      "path": "/GlobalParams/one"
+    },
+    {
+      "column": 3,
+      "header": "one_sub",
+      "kind": "block",
+      "line": 3,
+      "name": "one_sub",
+      "path": "/GlobalParams/one/one_sub"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 4,
+      "name": "one_sub_param",
+      "override": false,
+      "path": "/GlobalParams/one/one_sub/one_sub_param",
+      "value": "100",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "100",
+          "valueType": "integer"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "two",
+      "kind": "block",
+      "line": 6,
+      "name": "two",
+      "path": "/GlobalParams/one/two"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 7,
+      "name": "two_param",
+      "override": false,
+      "path": "/GlobalParams/one/two/two_param",
+      "value": "200",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "200",
+          "valueType": "integer"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

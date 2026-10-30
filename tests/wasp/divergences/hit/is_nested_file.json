@@ -1,0 +1,71 @@
+{
+  "diagnostics": [
+    {
+      "column": 10,
+      "line": 3,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 2,
+      "name": "param_01",
+      "override": false,
+      "path": "/param_01",
+      "value": "10",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "10",
+          "valueType": "integer"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "kind": "include",
+      "line": 3,
+      "name": "incl",
+      "path": "/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 10,
+      "kind": "parameter",
+      "line": 3,
+      "name": "input_incl.i",
+      "override": false,
+      "path": "/input_incl.i",
+      "values": []
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 4,
+      "name": "param_03",
+      "override": false,
+      "path": "/param_03",
+      "value": "30",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "30",
+          "valueType": "integer"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

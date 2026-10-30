@@ -1,0 +1,18 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 2,
+      "message": "syntax error, unexpected invalid token"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    }
+  ]
+}

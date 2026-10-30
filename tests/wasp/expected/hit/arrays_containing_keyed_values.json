@@ -1,0 +1,317 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "array",
+      "path": "/array_outer_01",
+      "name": "array_outer_01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "param_inner_01",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "100",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "param_inner_02",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "200",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "param_inner_03",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "300",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path",
+      "name": "path",
+      "header": "path",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object",
+      "name": "object",
+      "header": "//path/to///object/",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path",
+      "name": "path",
+      "header": "path",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to/array",
+      "name": "array",
+      "header": "array",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to/array/outer",
+      "name": "outer",
+      "header": "outer",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/path/to/object/path/to/array/outer/02",
+      "name": "02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "param/inner/01",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "100",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "param/inner/02",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "200",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "param/inner/03",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "300",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path",
+      "name": "path",
+      "header": "path",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/array",
+      "name": "array",
+      "header": "array",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/array/outer",
+      "name": "outer",
+      "header": "outer",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/path/to/array/outer/03",
+      "name": "03",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "array_outer_01='param_inner_01=100;param_inner_02=200;param_inner_03=300'",
+          "valueType": "string"
+        }
+      ],
+      "value": "array_outer_01='param_inner_01=100;param_inner_02=200;param_inner_03=300'",
+      "valueType": "string",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path",
+      "name": "path",
+      "header": "path",
+      "line": 13,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 13,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object",
+      "name": "object",
+      "header": "//path/to///object/",
+      "line": 13,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path",
+      "name": "path",
+      "header": "path",
+      "line": 15,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 15,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to/array",
+      "name": "array",
+      "header": "array",
+      "line": 15,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to/array/outer",
+      "name": "outer",
+      "header": "outer",
+      "line": 15,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/path/to/object/path/to/array/outer/04",
+      "name": "04",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "path/to/array//outer/02/='param/inner/01=100;param/inner/02=200;param/inner/03=300'",
+          "valueType": "string"
+        }
+      ],
+      "value": "path/to/array//outer/02/='param/inner/01=100;param/inner/02=200;param/inner/03=300'",
+      "valueType": "string",
+      "line": 15,
+      "column": 3
+    }
+  ]
+}

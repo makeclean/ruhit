@@ -1,0 +1,28 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 1,
+      "name": "key",
+      "override": false,
+      "path": "/key",
+      "value": "'${y=a b c}_z'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'${y=a b c}_z'",
+          "valueType": "quoted-string"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

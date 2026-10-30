@@ -1,0 +1,41 @@
+{
+  "diagnostics": [
+    {
+      "column": 7,
+      "line": 1,
+      "message": "syntax error, unexpected end of file",
+      "source": "stream input"
+    },
+    {
+      "column": 6,
+      "line": 1,
+      "message": "syntax error, 'key1' has a missing or malformed value",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 1,
+      "name": "key1",
+      "override": false,
+      "path": "/key1",
+      "value": "",
+      "valueType": "missing",
+      "values": [
+        {
+          "value": "",
+          "valueType": "missing"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

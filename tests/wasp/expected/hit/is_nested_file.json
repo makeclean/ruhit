@@ -1,0 +1,78 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/param_01",
+      "name": "param_01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "10",
+          "valueType": "integer"
+        }
+      ],
+      "value": "10",
+      "valueType": "integer",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "include",
+      "path": "/incl",
+      "name": "incl",
+      "text": "!include input_incl.i",
+      "target": "input_incl.i",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/comment",
+      "text": "# if is_nested_file() is not checked in findChild the '=' below is returned",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/param_02",
+      "name": "param_02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "20",
+          "valueType": "integer"
+        }
+      ],
+      "value": "20",
+      "valueType": "integer",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/param_03",
+      "name": "param_03",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "30",
+          "valueType": "integer"
+        }
+      ],
+      "value": "30",
+      "valueType": "integer",
+      "line": 4,
+      "column": 1
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 1,
+      "message": "unclosed block 'ted'; expected a closing header",
+      "source": "stream input"
+    },
+    {
+      "column": 6,
+      "line": 1,
+      "message": "unclosed block 'fred'; expected a closing header",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "ted",
+      "kind": "block",
+      "line": 1,
+      "name": "ted",
+      "path": "/ted"
+    },
+    {
+      "column": 6,
+      "header": "./fred",
+      "kind": "block",
+      "line": 1,
+      "name": "fred",
+      "path": "/ted/fred"
+    },
+    {
+      "assign": "=",
+      "column": 14,
+      "kind": "array",
+      "line": 1,
+      "name": "key",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "3.4321",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "",
+          "valueType": "array"
+        },
+        {
+          "partType": "value",
+          "value": "",
+          "valueType": "array"
+        }
+      ],
+      "path": "/ted/fred/key"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

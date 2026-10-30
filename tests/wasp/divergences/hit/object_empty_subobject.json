@@ -1,0 +1,27 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "ted",
+      "kind": "block",
+      "line": 1,
+      "name": "ted",
+      "path": "/ted"
+    },
+    {
+      "column": 6,
+      "header": "./fred",
+      "kind": "block",
+      "line": 1,
+      "name": "fred",
+      "path": "/ted/fred"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

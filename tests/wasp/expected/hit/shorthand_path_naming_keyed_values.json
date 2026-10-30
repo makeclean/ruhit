@@ -1,0 +1,133 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/path",
+      "name": "path",
+      "header": "path",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/param",
+      "name": "param",
+      "header": "param",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/param/inner",
+      "name": "inner",
+      "header": "inner",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/path/to/param/inner/01",
+      "name": "01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"one\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"one\"",
+      "valueType": "quoted-string",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path",
+      "name": "path",
+      "header": "path",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object",
+      "name": "object",
+      "header": "//path/to///object/",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path",
+      "name": "path",
+      "header": "path",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to/param",
+      "name": "param",
+      "header": "param",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object/path/to/param/inner",
+      "name": "inner",
+      "header": "inner",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/path/to/object/path/to/param/inner/02",
+      "name": "02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "2.2",
+          "valueType": "real"
+        }
+      ],
+      "value": "2.2",
+      "valueType": "real",
+      "line": 7,
+      "column": 3
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "diagnostics": [
+    {
+      "column": 17,
+      "line": 1,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "block",
+      "kind": "block",
+      "line": 1,
+      "name": "block",
+      "path": "/block"
+    },
+    {
+      "column": 8,
+      "kind": "include",
+      "line": 1,
+      "name": "incl",
+      "path": "/block/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 17,
+      "kind": "parameter",
+      "line": 1,
+      "name": "nested_block.i",
+      "override": false,
+      "path": "/block/nested_block.i",
+      "values": []
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

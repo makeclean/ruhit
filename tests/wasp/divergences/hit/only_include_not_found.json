@@ -1,0 +1,37 @@
+{
+  "diagnostics": [
+    {
+      "column": 16,
+      "line": 4,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 7,
+      "kind": "include",
+      "line": 4,
+      "name": "incl",
+      "path": "/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 16,
+      "kind": "parameter",
+      "line": 4,
+      "name": "block_missing.i",
+      "override": false,
+      "path": "/block_missing.i",
+      "values": []
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

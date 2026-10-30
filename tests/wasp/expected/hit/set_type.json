@@ -1,0 +1,43 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/BlockObject",
+      "name": "BlockObject",
+      "header": "BlockObject",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/BlockObject/comment",
+      "text": "# blankline",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/BlockObject/a",
+      "name": "a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "100.001",
+          "valueType": "real"
+        }
+      ],
+      "value": "100.001",
+      "valueType": "real",
+      "line": 4,
+      "column": 3
+    }
+  ]
+}

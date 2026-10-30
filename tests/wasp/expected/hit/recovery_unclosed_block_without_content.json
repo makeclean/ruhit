@@ -1,0 +1,26 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 1,
+      "message": "syntax error, unexpected end of file"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/block",
+      "name": "block",
+      "header": "block",
+      "line": 1,
+      "column": 1
+    }
+  ]
+}

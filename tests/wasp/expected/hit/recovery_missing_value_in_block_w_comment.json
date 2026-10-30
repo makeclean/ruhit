@@ -1,0 +1,66 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 11,
+      "message": "syntax error, unexpected comment"
+    },
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 9,
+      "message": "syntax error, 'key1' has a missing or malformed value"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/block",
+      "name": "block",
+      "header": "block",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/block/key1",
+      "name": "key1",
+      "assign": "=",
+      "override": false,
+      "values": [],
+      "line": 2,
+      "column": 4
+    },
+    {
+      "kind": "comment",
+      "path": "/block/comment",
+      "text": "# a comment instead of expected value",
+      "line": 2,
+      "column": 11
+    },
+    {
+      "kind": "parameter",
+      "path": "/block/key2",
+      "name": "key2",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3.1415",
+          "valueType": "real"
+        }
+      ],
+      "value": "3.1415",
+      "valueType": "real",
+      "line": 3,
+      "column": 4
+    }
+  ]
+}

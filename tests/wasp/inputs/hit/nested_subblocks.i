@@ -1,0 +1,6 @@
+[block]
+  [./subblock]
+    [./nested_subblock]
+    [../]
+  [../]
+[]

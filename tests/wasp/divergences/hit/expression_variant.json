@@ -1,0 +1,52 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "array",
+      "line": 1,
+      "name": "G2",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "${fparse",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "${units",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "505.97",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "J/(kg*K)",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "->",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "eV/(g*K)}*ru0*(Temp_-Theta_e_mb)}",
+          "valueType": "string"
+        }
+      ],
+      "path": "/G2"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

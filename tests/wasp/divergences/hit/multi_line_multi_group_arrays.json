@@ -1,0 +1,201 @@
+{
+  "diagnostics": [
+    {
+      "column": 17,
+      "line": 5,
+      "message": "expected '=' after parameter name '-flag_04'",
+      "source": "stream input"
+    },
+    {
+      "column": 14,
+      "line": 6,
+      "message": "unexpected '''",
+      "source": "stream input"
+    },
+    {
+      "column": 16,
+      "line": 6,
+      "message": "expected '=' after parameter name '-flag_05'",
+      "source": "stream input"
+    },
+    {
+      "column": 31,
+      "line": 10,
+      "message": "expected '=' after parameter name '19.8'",
+      "source": "stream input"
+    },
+    {
+      "column": 13,
+      "line": 11,
+      "message": "unexpected '''",
+      "source": "stream input"
+    },
+    {
+      "column": 15,
+      "line": 11,
+      "message": "expected '=' after parameter name 'group_04'",
+      "source": "stream input"
+    },
+    {
+      "column": 29,
+      "line": 16,
+      "message": "expected '=' after parameter name 'strain_xx'",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Params",
+      "kind": "block",
+      "line": 2,
+      "name": "Params",
+      "path": "/Params"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "array",
+      "line": 4,
+      "name": "array01",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_01",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_02",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_03",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/Params/array01"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "array",
+      "line": 9,
+      "name": "array02",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "01",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "02.4",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "15.6",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "strain_xx",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "strain_yy",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "strain_zz",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/Params/array02"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "array",
+      "line": 13,
+      "name": "array03",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "vonmises_stress",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "hydrostatic_stress",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "stress_xx",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "stress_yy",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "stress_zz",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/Params/array03"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

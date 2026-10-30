@@ -1,0 +1,70 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/GlobalParams",
+      "name": "GlobalParams",
+      "header": "GlobalParams",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/GlobalParams/disp_x",
+      "name": "disp_x",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "disp_x",
+          "valueType": "string"
+        }
+      ],
+      "value": "disp_x",
+      "valueType": "string",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/GlobalParams/disp_y",
+      "name": "disp_y",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "disp_y",
+          "valueType": "string"
+        }
+      ],
+      "value": "disp_y",
+      "valueType": "string",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/GlobalParams/disp_z",
+      "name": "disp_z",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "disp_z",
+          "valueType": "string"
+        }
+      ],
+      "value": "disp_z",
+      "valueType": "string",
+      "line": 4,
+      "column": 1
+    }
+  ]
+}

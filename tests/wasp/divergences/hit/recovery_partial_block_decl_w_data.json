@@ -1,0 +1,43 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 1,
+      "message": "expected ']' to close block header",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "blo",
+      "kind": "block",
+      "line": 1,
+      "name": "blo",
+      "path": "/blo"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 2,
+      "name": "foo",
+      "override": false,
+      "path": "/blo/foo",
+      "value": "bar",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "bar",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

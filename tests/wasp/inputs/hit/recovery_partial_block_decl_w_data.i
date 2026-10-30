@@ -1,0 +1,3 @@
+[blo
+    foo=bar
+[]

@@ -1,0 +1,282 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Params",
+      "name": "Params",
+      "header": "Params",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/Params/array01",
+      "name": "array01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_01",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_02",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_03",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_04",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_05",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_06",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "-flag_07",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/Params/array02",
+      "name": "array02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "01",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "02.4",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "15.6",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "strain_xx",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "strain_yy",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "strain_zz",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "19.8",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "max_principal_stress",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "96",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "more",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "8.3",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "vals",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "group_04",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "line_03",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "values",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 9,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/Params/array03",
+      "name": "array03",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "vonmises_stress",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "hydrostatic_stress",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "stress_xx",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "stress_yy",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "stress_zz",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "strain_xx",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "strain_yy",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "strain_zz",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 13,
+      "column": 3
+    }
+  ]
+}

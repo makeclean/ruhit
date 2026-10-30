@@ -1,0 +1,120 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "array",
+      "line": 2,
+      "name": "array01",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "d2F1:=D[F1,eta1,eta1]",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "d2F2:=D[F2,eta1,eta1]",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/array01"
+    },
+    {
+      "column": 1,
+      "header": "BlockContainer",
+      "kind": "block",
+      "line": 3,
+      "name": "BlockContainer",
+      "path": "/BlockContainer"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "array",
+      "line": 4,
+      "name": "array02",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "08.4;;",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "-5;;123;abc:=t[e_x]t;;-02.85;",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/BlockContainer/array02"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "array",
+      "line": 5,
+      "name": "array03",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/real=1.01;path/to/int=10;path/to/string=one;path/to/blank=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\" \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/real=2.02;path/to/int=20;path/to/string=two;path/to/blank=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/BlockContainer/array03"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

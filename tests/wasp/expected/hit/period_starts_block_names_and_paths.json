@@ -1,0 +1,134 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Names_Begin_With_Letter",
+      "name": "Block_Names_Begin_With_Letter",
+      "header": "Block_Names_Begin_With_Letter",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Names_Begin_With_Letter/child_1a_no_type",
+      "name": "child_1a_no_type",
+      "header": "child_1a_no_type",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block_Names_Begin_With_Letter/child_1a_no_type/var_1a",
+      "name": "var_1a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val_1a",
+          "valueType": "string"
+        }
+      ],
+      "value": "val_1a",
+      "valueType": "string",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Names_Begin_With_Period",
+      "name": "Block_Names_Begin_With_Period",
+      "header": "Block_Names_Begin_With_Period",
+      "line": 11,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Names_Begin_With_Period/.child_2a_no_type",
+      "name": ".child_2a_no_type",
+      "header": ".child_2a_no_type",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block_Names_Begin_With_Period/.child_2a_no_type/var_2a",
+      "name": "var_2a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val_2a",
+          "valueType": "string"
+        }
+      ],
+      "value": "val_2a",
+      "valueType": "string",
+      "line": 14,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Paths_Begin_With_Period",
+      "name": "Block_Paths_Begin_With_Period",
+      "header": "Block_Paths_Begin_With_Period",
+      "line": 19,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Paths_Begin_With_Period/.child",
+      "name": ".child",
+      "header": ".child",
+      "line": 21,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Paths_Begin_With_Period/.child/3a",
+      "name": "3a",
+      "header": "3a",
+      "line": 21,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Paths_Begin_With_Period/.child/3a/no",
+      "name": "no",
+      "header": "no",
+      "line": 21,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/Block_Paths_Begin_With_Period/.child/3a/no/type",
+      "name": "type",
+      "header": ".child/3a/no/type",
+      "line": 21,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block_Paths_Begin_With_Period/.child/3a/no/type/var_3a",
+      "name": "var_3a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val_3a",
+          "valueType": "string"
+        }
+      ],
+      "value": "val_3a",
+      "valueType": "string",
+      "line": 22,
+      "column": 5
+    }
+  ]
+}

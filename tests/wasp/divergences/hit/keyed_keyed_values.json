@@ -1,0 +1,76 @@
+{
+  "diagnostics": [
+    {
+      "column": 41,
+      "line": 3,
+      "message": "expected '=' after parameter name 'one'",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 3,
+      "name": "param_outer_01",
+      "override": false,
+      "path": "/param_outer_01",
+      "value": "path/to/param/inner/01=",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "path/to/param/inner/01=",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "path",
+      "kind": "block",
+      "line": 5,
+      "name": "path",
+      "path": "/path"
+    },
+    {
+      "column": 1,
+      "header": "to",
+      "kind": "block",
+      "line": 5,
+      "name": "to",
+      "path": "/path/to"
+    },
+    {
+      "column": 1,
+      "header": "//path/to///object/",
+      "kind": "block",
+      "line": 5,
+      "name": "object",
+      "path": "/path/to/object"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 7,
+      "name": "param_outer_02",
+      "override": false,
+      "path": "/path/to/object/param_outer_02",
+      "value": "///path/to///param/inner/02//=2.2",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "///path/to///param/inner/02//=2.2",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

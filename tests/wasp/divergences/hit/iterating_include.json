@@ -1,0 +1,71 @@
+{
+  "diagnostics": [
+    {
+      "column": 10,
+      "line": 2,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 1,
+      "name": "a",
+      "override": false,
+      "path": "/a",
+      "value": "1",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "1",
+          "valueType": "integer"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "kind": "include",
+      "line": 2,
+      "name": "incl",
+      "path": "/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 10,
+      "kind": "parameter",
+      "line": 2,
+      "name": "b.i",
+      "override": false,
+      "path": "/b.i",
+      "values": []
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 3,
+      "name": "c",
+      "override": false,
+      "path": "/c",
+      "value": "3",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "3",
+          "valueType": "integer"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

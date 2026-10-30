@@ -1,0 +1,19 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "objectname&",
+      "kind": "block",
+      "line": 2,
+      "name": "objectname&",
+      "path": "/objectname&"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

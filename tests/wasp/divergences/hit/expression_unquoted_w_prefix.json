@@ -1,0 +1,41 @@
+{
+  "diagnostics": [
+    {
+      "column": 12,
+      "line": 1,
+      "message": "unexpected '='",
+      "source": "stream input"
+    },
+    {
+      "column": 13,
+      "line": 1,
+      "message": "expected '=' after parameter name 'a'",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 1,
+      "name": "key",
+      "override": false,
+      "path": "/key",
+      "value": "x_${y",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "x_${y",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

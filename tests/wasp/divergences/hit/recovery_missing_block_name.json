@@ -1,0 +1,43 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 3,
+      "message": "syntax error, unexpected end of line, expecting object name",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 3,
+      "header": "",
+      "kind": "block",
+      "line": 2,
+      "name": "",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 3,
+      "name": "foo",
+      "override": false,
+      "path": "/foo",
+      "value": "bar",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "bar",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

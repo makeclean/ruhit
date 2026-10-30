@@ -1,0 +1,36 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "ted",
+      "kind": "block",
+      "line": 1,
+      "name": "ted",
+      "path": "/ted"
+    },
+    {
+      "assign": "=",
+      "column": 6,
+      "kind": "parameter",
+      "line": 1,
+      "name": "data",
+      "override": false,
+      "path": "/ted/data",
+      "value": "'basic 201 lu'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'basic 201 lu'",
+          "valueType": "quoted-string"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

@@ -1,0 +1,45 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "include",
+      "path": "/incl",
+      "name": "incl",
+      "text": "!include block.i",
+      "target": "block.i",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/block",
+      "name": "block",
+      "header": "block",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/block/key",
+      "name": "key",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3",
+          "valueType": "integer"
+        }
+      ],
+      "value": "3",
+      "valueType": "integer",
+      "line": 1,
+      "column": 11
+    }
+  ]
+}

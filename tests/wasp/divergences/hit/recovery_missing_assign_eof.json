@@ -1,0 +1,32 @@
+{
+  "diagnostics": [
+    {
+      "column": 3,
+      "line": 2,
+      "message": "expected '=' after parameter name 'param'",
+      "source": "stream input"
+    },
+    {
+      "column": 8,
+      "line": 2,
+      "message": "syntax error, unexpected end of file",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "block",
+      "kind": "block",
+      "line": 1,
+      "name": "block",
+      "path": "/block"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

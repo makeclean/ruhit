@@ -1,0 +1,223 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/DoubleQuotesInArrays",
+      "name": "DoubleQuotesInArrays",
+      "header": "DoubleQuotesInArrays",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/DoubleQuotesInArrays/array01",
+      "name": "array01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "one",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "two=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"foo bar \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DoubleQuotesInArrays/array02",
+      "name": "array02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "one",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "two=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"foo bar;\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DoubleQuotesInArrays/array03",
+      "name": "array03",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "one",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "two",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"foo bar \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DoubleQuotesInArrays/array04",
+      "name": "array04",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "one",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "two",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"foo bar;\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 6,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DoubleQuotesInArrays/array05",
+      "name": "array05",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "one",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "two",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"foo bar \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/DoubleQuotesInArrays/array06",
+      "name": "array06",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "one",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "two",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"foo bar;\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 8,
+      "column": 3
+    }
+  ]
+}

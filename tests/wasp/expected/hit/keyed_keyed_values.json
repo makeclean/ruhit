@@ -1,0 +1,69 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/param_outer_01",
+      "name": "param_outer_01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "path/to/param/inner/01=\"one\"",
+          "valueType": "string"
+        }
+      ],
+      "value": "path/to/param/inner/01=\"one\"",
+      "valueType": "string",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path",
+      "name": "path",
+      "header": "path",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to",
+      "name": "to",
+      "header": "to",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/path/to/object",
+      "name": "object",
+      "header": "//path/to///object/",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/path/to/object/param_outer_02",
+      "name": "param_outer_02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "///path/to///param/inner/02//=2.2",
+          "valueType": "string"
+        }
+      ],
+      "value": "///path/to///param/inner/02//=2.2",
+      "valueType": "string",
+      "line": 7,
+      "column": 3
+    }
+  ]
+}

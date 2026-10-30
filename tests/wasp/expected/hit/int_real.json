@@ -1,0 +1,164 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/a",
+      "name": "a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3",
+          "valueType": "integer"
+        }
+      ],
+      "value": "3",
+      "valueType": "integer",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/b",
+      "name": "b",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3.1",
+          "valueType": "real"
+        }
+      ],
+      "value": "3.1",
+      "valueType": "real",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/c",
+      "name": "c",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "1e2",
+          "valueType": "real"
+        }
+      ],
+      "value": "1e2",
+      "valueType": "real",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/d",
+      "name": "d",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3.e1",
+          "valueType": "real"
+        }
+      ],
+      "value": "3.e1",
+      "valueType": "real",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/e",
+      "name": "e",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3.2e3",
+          "valueType": "real"
+        }
+      ],
+      "value": "3.2e3",
+      "valueType": "real",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/f",
+      "name": "f",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "-3",
+          "valueType": "integer"
+        }
+      ],
+      "value": "-3",
+      "valueType": "integer",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/g",
+      "name": "g",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "-3.E1",
+          "valueType": "real"
+        }
+      ],
+      "value": "-3.E1",
+      "valueType": "real",
+      "line": 8,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/h",
+      "name": "h",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "-3.2E2",
+          "valueType": "real"
+        }
+      ],
+      "value": "-3.2E2",
+      "valueType": "real",
+      "line": 9,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/i",
+      "name": "i",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "1e23.3",
+          "valueType": "string"
+        }
+      ],
+      "value": "1e23.3",
+      "valueType": "string",
+      "line": 10,
+      "column": 5
+    }
+  ]
+}

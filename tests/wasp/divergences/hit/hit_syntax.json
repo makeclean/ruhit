@@ -1,0 +1,423 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "TopLevelBlock",
+      "kind": "block",
+      "line": 2,
+      "name": "TopLevelBlock",
+      "path": "/TopLevelBlock"
+    },
+    {
+      "column": 3,
+      "header": "sub-decl-sub-term-no-type",
+      "kind": "block",
+      "line": 4,
+      "name": "sub-decl-sub-term-no-type",
+      "path": "/TopLevelBlock/sub-decl-sub-term-no-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 5,
+      "name": "flag01",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-sub-term-no-type/flag01",
+      "value": "1.1",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "1.1",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 6,
+      "name": "array01",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-sub-term-no-type/array01",
+      "value": "'name11 name12 name13'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name11 name12 name13'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "sub-decl-top-term-no-type",
+      "kind": "block",
+      "line": 9,
+      "name": "sub-decl-top-term-no-type",
+      "path": "/TopLevelBlock/sub-decl-top-term-no-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 10,
+      "name": "flag02",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-top-term-no-type/flag02",
+      "value": "2.2",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "2.2",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 11,
+      "name": "array02",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-top-term-no-type/array02",
+      "value": "'name21 name22 name23'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name21 name22 name23'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "top-decl-sub-term-no-type",
+      "kind": "block",
+      "line": 14,
+      "name": "top-decl-sub-term-no-type",
+      "path": "/TopLevelBlock/top-decl-sub-term-no-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 15,
+      "name": "flag03",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-sub-term-no-type/flag03",
+      "value": "3.3",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "3.3",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 16,
+      "name": "array03",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-sub-term-no-type/array03",
+      "value": "'name31 name32 name33'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name31 name32 name33'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "top-decl-top-term-no-type",
+      "kind": "block",
+      "line": 19,
+      "name": "top-decl-top-term-no-type",
+      "path": "/TopLevelBlock/top-decl-top-term-no-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 20,
+      "name": "flag04",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-top-term-no-type/flag04",
+      "value": "4.4",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "4.4",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 21,
+      "name": "array04",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-top-term-no-type/array04",
+      "value": "'name41 name42 name43'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name41 name42 name43'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "sub-decl-sub-term-wt-type",
+      "kind": "block",
+      "line": 24,
+      "name": "sub-decl-sub-term-wt-type",
+      "path": "/TopLevelBlock/sub-decl-sub-term-wt-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 25,
+      "name": "type",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-sub-term-wt-type/type",
+      "value": "SubDeclSubTerm",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "SubDeclSubTerm",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 26,
+      "name": "flag05",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-sub-term-wt-type/flag05",
+      "value": "5.5",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "5.5",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 27,
+      "name": "array05",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-sub-term-wt-type/array05",
+      "value": "'name51 name42 name53'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name51 name42 name53'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "sub-decl-top-term-wt-type",
+      "kind": "block",
+      "line": 30,
+      "name": "sub-decl-top-term-wt-type",
+      "path": "/TopLevelBlock/sub-decl-top-term-wt-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 31,
+      "name": "type",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-top-term-wt-type/type",
+      "value": "SubDeclTopTerm",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "SubDeclTopTerm",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 32,
+      "name": "flag06",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-top-term-wt-type/flag06",
+      "value": "6.6",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "6.6",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 33,
+      "name": "array06",
+      "override": false,
+      "path": "/TopLevelBlock/sub-decl-top-term-wt-type/array06",
+      "value": "'name61 name62 name63'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name61 name62 name63'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "top-decl-sub-term-wt-type",
+      "kind": "block",
+      "line": 36,
+      "name": "top-decl-sub-term-wt-type",
+      "path": "/TopLevelBlock/top-decl-sub-term-wt-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 37,
+      "name": "type",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-sub-term-wt-type/type",
+      "value": "TopDeclSubTerm",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "TopDeclSubTerm",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 38,
+      "name": "flag07",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-sub-term-wt-type/flag07",
+      "value": "7.7",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "7.7",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 39,
+      "name": "array07",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-sub-term-wt-type/array07",
+      "value": "'name71 name72 name73'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name71 name72 name73'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "column": 3,
+      "header": "top-decl-top-term-wt-type",
+      "kind": "block",
+      "line": 42,
+      "name": "top-decl-top-term-wt-type",
+      "path": "/TopLevelBlock/top-decl-top-term-wt-type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 43,
+      "name": "type",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-top-term-wt-type/type",
+      "value": "TopDeclTopTerm",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "TopDeclTopTerm",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 44,
+      "name": "flag08",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-top-term-wt-type/flag08",
+      "value": "8.8",
+      "valueType": "real",
+      "values": [
+        {
+          "value": "8.8",
+          "valueType": "real"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 45,
+      "name": "array08",
+      "override": false,
+      "path": "/TopLevelBlock/top-decl-top-term-wt-type/array08",
+      "value": "'name81 name82 name83'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'name81 name82 name83'",
+          "valueType": "quoted-string"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

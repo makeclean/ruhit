@@ -1,0 +1,28 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 2,
+      "name": "param&name",
+      "override": false,
+      "path": "/param&name",
+      "value": "10",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "10",
+          "valueType": "integer"
+        }
+      ]
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

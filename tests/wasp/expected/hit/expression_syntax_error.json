@@ -1,0 +1,48 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 3,
+      "column": 9,
+      "message": "syntax error, unexpected end of file"
+    },
+    {
+      "source": "stream input",
+      "line": 3,
+      "column": 8,
+      "message": "syntax error, 'foo01' has a missing or malformed value"
+    },
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 1,
+      "message": "syntax error, unexpected end of file, expecting block terminator"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Simple",
+      "name": "Simple",
+      "header": "Simple",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Simple/foo01",
+      "name": "foo01",
+      "assign": "=",
+      "override": false,
+      "values": [],
+      "line": 3,
+      "column": 3
+    }
+  ]
+}

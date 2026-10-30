@@ -1,0 +1,185 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Problem",
+      "kind": "block",
+      "line": 1,
+      "name": "Problem",
+      "path": "/Problem"
+    },
+    {
+      "column": 5,
+      "kind": "comment",
+      "line": 2,
+      "path": "/Problem/comment",
+      "text": "# Specify coordinate system type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 3,
+      "name": "coord_type",
+      "override": false,
+      "path": "/Problem/coord_type",
+      "value": "RZ",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "RZ",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "Mesh",
+      "kind": "block",
+      "line": 6,
+      "name": "Mesh",
+      "path": "/Mesh"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 7,
+      "name": "file",
+      "override": false,
+      "path": "/Mesh/file",
+      "value": "pelletcladmergedfine10_rz.e",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "pelletcladmergedfine10_rz.e",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 8,
+      "name": "displacements",
+      "override": false,
+      "path": "/Mesh/displacements",
+      "value": "'disp_x disp_y'",
+      "valueType": "quoted-string",
+      "values": [
+        {
+          "value": "'disp_x disp_y'",
+          "valueType": "quoted-string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 9,
+      "name": "patch_size",
+      "override": false,
+      "path": "/Mesh/patch_size",
+      "value": "1000",
+      "valueType": "integer",
+      "values": [
+        {
+          "value": "1000",
+          "valueType": "integer"
+        }
+      ]
+    },
+    {
+      "column": 23,
+      "kind": "comment",
+      "line": 9,
+      "path": "/Mesh/comment",
+      "text": "# For contact algorithm"
+    },
+    {
+      "column": 1,
+      "header": "1",
+      "kind": "block",
+      "line": 11,
+      "name": "1",
+      "path": "/1"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 12,
+      "name": "some",
+      "override": false,
+      "path": "/1/some",
+      "value": "thing",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "thing",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 5,
+      "header": "2",
+      "kind": "block",
+      "line": 13,
+      "name": "2",
+      "path": "/1/2"
+    },
+    {
+      "assign": "=",
+      "column": 9,
+      "kind": "parameter",
+      "line": 14,
+      "name": "another",
+      "override": false,
+      "path": "/1/2/another",
+      "value": "value",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "value",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 9,
+      "kind": "array",
+      "line": 15,
+      "name": "sliceheight",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "${/",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "${fuelheight}",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "${numslices}}",
+          "valueType": "string"
+        }
+      ],
+      "path": "/1/2/sliceheight"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

@@ -1,0 +1,53 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/block",
+      "name": "block",
+      "header": "block",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "include",
+      "path": "/block/incl",
+      "name": "incl",
+      "text": "!include nested_block.i",
+      "target": "nested_block.i",
+      "line": 1,
+      "column": 8
+    },
+    {
+      "kind": "block",
+      "path": "/block/nested_block",
+      "name": "nested_block",
+      "header": "nested_block",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/block/nested_block/key",
+      "name": "key",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3",
+          "valueType": "integer"
+        }
+      ],
+      "value": "3",
+      "valueType": "integer",
+      "line": 1,
+      "column": 18
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "diagnostics": [
+    {
+      "column": 10,
+      "line": 1,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    },
+    {
+      "column": 14,
+      "line": 5,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    },
+    {
+      "column": 10,
+      "line": 8,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    },
+    {
+      "column": 1,
+      "line": 8,
+      "message": "duplicate parameter '!include'; later assignments override earlier ones",
+      "source": "stream input"
+    },
+    {
+      "column": 10,
+      "line": 8,
+      "message": "duplicate parameter 'fileB.i'; later assignments override earlier ones",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "kind": "include",
+      "line": 1,
+      "name": "incl",
+      "path": "/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 10,
+      "kind": "parameter",
+      "line": 1,
+      "name": "fileB.i",
+      "override": false,
+      "path": "/fileB.i",
+      "values": []
+    },
+    {
+      "column": 1,
+      "header": "A",
+      "kind": "block",
+      "line": 3,
+      "name": "A",
+      "path": "/A"
+    },
+    {
+      "column": 5,
+      "kind": "comment",
+      "line": 4,
+      "path": "/A/comment",
+      "text": "# nested"
+    },
+    {
+      "column": 5,
+      "kind": "include",
+      "line": 5,
+      "name": "incl",
+      "path": "/A/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 14,
+      "kind": "parameter",
+      "line": 5,
+      "name": "fileB.i",
+      "override": false,
+      "path": "/A/fileB.i",
+      "values": []
+    },
+    {
+      "column": 1,
+      "kind": "include",
+      "line": 8,
+      "name": "incl",
+      "path": "/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 10,
+      "kind": "parameter",
+      "line": 8,
+      "name": "fileB.i",
+      "override": false,
+      "path": "/fileB.i",
+      "values": []
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

@@ -1,0 +1,325 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/obj",
+      "name": "obj",
+      "header": "obj",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/obj/param1",
+      "name": "param1",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "10",
+          "valueType": "integer"
+        }
+      ],
+      "value": "10",
+      "valueType": "integer",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/obj/param2",
+      "name": "param2",
+      "assign": ":=",
+      "override": true,
+      "values": [
+        {
+          "value": "20",
+          "valueType": "integer"
+        }
+      ],
+      "value": "20",
+      "valueType": "integer",
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/obj/param3",
+      "name": "param3",
+      "assign": ":override=",
+      "override": true,
+      "values": [
+        {
+          "value": "30",
+          "valueType": "integer"
+        }
+      ],
+      "value": "30",
+      "valueType": "integer",
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/obj/array1",
+      "name": "array1",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "11",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "12",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "13",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 6,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/obj/array2",
+      "name": "array2",
+      "assign": ":=",
+      "override": true,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "21",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "22",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "23",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/obj/array3",
+      "name": "array3",
+      "assign": ":override=",
+      "override": true,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "31",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "32",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "33",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 8,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/obj/param4",
+      "name": "param4",
+      "assign": ":=",
+      "override": true,
+      "values": [
+        {
+          "value": "40",
+          "valueType": "integer"
+        }
+      ],
+      "value": "40",
+      "valueType": "integer",
+      "line": 9,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/obj/array4",
+      "name": "array4",
+      "assign": ":=",
+      "override": true,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "41",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "42",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "43",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 10,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/obj/foo1::param5",
+      "name": "foo1::param5",
+      "assign": ":=",
+      "override": true,
+      "values": [
+        {
+          "value": "50",
+          "valueType": "integer"
+        }
+      ],
+      "value": "50",
+      "valueType": "integer",
+      "line": 11,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/obj/foo2::array5",
+      "name": "foo2::array5",
+      "assign": ":=",
+      "override": true,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "51",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "52",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "53",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 12,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/obj/bar1::param6",
+      "name": "bar1::param6",
+      "assign": ":=",
+      "override": true,
+      "values": [
+        {
+          "value": "60",
+          "valueType": "integer"
+        }
+      ],
+      "value": "60",
+      "valueType": "integer",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/obj/bar2::array6",
+      "name": "bar2::array6",
+      "assign": ":=",
+      "override": true,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "61",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "62",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "63",
+          "valueType": "integer"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 14,
+      "column": 3
+    }
+  ]
+}

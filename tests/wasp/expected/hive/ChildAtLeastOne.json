@@ -1,0 +1,14 @@
+{
+  "suite": "hive",
+  "schemaParse": true,
+  "inputParse": true,
+  "valid": false,
+  "schemaDiagnostics": "",
+  "inputDiagnostics": "",
+  "combined": "line:2 column:1 - Validation Error: test has zero of: [ one 'two/value' 'three/value' ] - at least one must occur\nline:8 column:5 - Validation Error: five has zero of: [ \"../four\" \"../two/value\" ] - at least one must occur\nline:13 column:5 - Validation Error: seven has zero of: [ \"../six/value\" ] - at least one must occur\n",
+  "errors": [
+    "line:2 column:1 - Validation Error: test has zero of: [ one 'two/value' 'three/value' ] - at least one must occur",
+    "line:8 column:5 - Validation Error: five has zero of: [ \"../four\" \"../two/value\" ] - at least one must occur",
+    "line:13 column:5 - Validation Error: seven has zero of: [ \"../six/value\" ] - at least one must occur"
+  ]
+}

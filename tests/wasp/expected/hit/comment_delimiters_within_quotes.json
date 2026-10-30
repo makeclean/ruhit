@@ -1,0 +1,128 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/SingleQuotedCommentDelims",
+      "name": "SingleQuotedCommentDelims",
+      "header": "SingleQuotedCommentDelims",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/SingleQuotedCommentDelims/comment",
+      "text": "# comment for single quote block",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedCommentDelims/one",
+      "name": "one",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "#123",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedCommentDelims/two",
+      "name": "two",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "#456",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "#789",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 5,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/DoubleQuotedCommentDelims",
+      "name": "DoubleQuotedCommentDelims",
+      "header": "DoubleQuotedCommentDelims",
+      "line": 7,
+      "column": 1
+    },
+    {
+      "kind": "comment",
+      "path": "/DoubleQuotedCommentDelims/comment",
+      "text": "# comment for double quote block",
+      "line": 8,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedCommentDelims/one",
+      "name": "one",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"#123\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"#123\"",
+      "valueType": "quoted-string",
+      "line": 9,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedCommentDelims/two",
+      "name": "two",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"#456 #789\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"#456 #789\"",
+      "valueType": "quoted-string",
+      "line": 10,
+      "column": 3
+    }
+  ]
+}

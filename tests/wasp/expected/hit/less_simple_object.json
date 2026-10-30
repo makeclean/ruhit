@@ -1,0 +1,77 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/ted",
+      "name": "ted",
+      "header": "ted",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/ted/boo",
+      "name": "boo",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "foo",
+          "valueType": "string"
+        }
+      ],
+      "value": "foo",
+      "valueType": "string",
+      "line": 2,
+      "column": 6
+    },
+    {
+      "kind": "comment",
+      "path": "/ted/comment",
+      "text": "# halloween",
+      "line": 2,
+      "column": 16
+    },
+    {
+      "kind": "parameter",
+      "path": "/ted/fred",
+      "name": "fred",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "1",
+          "valueType": "integer"
+        }
+      ],
+      "value": "1",
+      "valueType": "integer",
+      "line": 3,
+      "column": 6
+    },
+    {
+      "kind": "parameter",
+      "path": "/ted/key",
+      "name": "key",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3.421",
+          "valueType": "real"
+        }
+      ],
+      "value": "3.421",
+      "valueType": "real",
+      "line": 4,
+      "column": 6
+    }
+  ]
+}

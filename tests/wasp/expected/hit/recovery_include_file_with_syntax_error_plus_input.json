@@ -1,0 +1,161 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "./input_incl.i",
+      "line": 6,
+      "column": 1,
+      "message": "syntax error, unexpected end of line"
+    },
+    {
+      "source": "./input_incl.i",
+      "line": 5,
+      "column": 14,
+      "message": "syntax error, 'param02b' has a missing or malformed value"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Block01",
+      "name": "Block01",
+      "header": "Block01",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/param01a",
+      "name": "param01a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "11",
+          "valueType": "integer"
+        }
+      ],
+      "value": "11",
+      "valueType": "integer",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "include",
+      "path": "/Block01/incl",
+      "name": "incl",
+      "text": "!include input_incl.i",
+      "target": "input_incl.i",
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/param01b",
+      "name": "param01b",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "12",
+          "valueType": "integer"
+        }
+      ],
+      "value": "12",
+      "valueType": "integer",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/Block01/Block02",
+      "name": "Block02",
+      "header": "Block02",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/Block02/param02a",
+      "name": "param02a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "21",
+          "valueType": "integer"
+        }
+      ],
+      "value": "21",
+      "valueType": "integer",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/Block02/param02b",
+      "name": "param02b",
+      "assign": "=",
+      "override": false,
+      "values": [],
+      "line": 5,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/Block02/param02c",
+      "name": "param02c",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "23",
+          "valueType": "integer"
+        }
+      ],
+      "value": "23",
+      "valueType": "integer",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/param01c",
+      "name": "param01c",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "13",
+          "valueType": "integer"
+        }
+      ],
+      "value": "13",
+      "valueType": "integer",
+      "line": 8,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Block01/param01d",
+      "name": "param01d",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "14",
+          "valueType": "integer"
+        }
+      ],
+      "value": "14",
+      "valueType": "integer",
+      "line": 5,
+      "column": 3
+    }
+  ]
+}

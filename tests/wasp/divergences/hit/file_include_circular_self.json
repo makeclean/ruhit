@@ -1,0 +1,45 @@
+{
+  "diagnostics": [
+    {
+      "column": 12,
+      "line": 3,
+      "message": "syntax error, unexpected value string, expecting = or :=",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Block01",
+      "kind": "block",
+      "line": 2,
+      "name": "Block01",
+      "path": "/Block01"
+    },
+    {
+      "column": 3,
+      "kind": "include",
+      "line": 3,
+      "name": "incl",
+      "path": "/Block01/incl",
+      "target": "",
+      "text": "!include "
+    },
+    {
+      "assign": "",
+      "column": 12,
+      "kind": "parameter",
+      "line": 3,
+      "name": "input02.i",
+      "override": false,
+      "path": "/Block01/input02.i",
+      "values": []
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

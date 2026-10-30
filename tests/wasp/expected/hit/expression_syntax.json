@@ -1,0 +1,555 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/Simple",
+      "name": "Simple",
+      "header": "Simple",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Simple/foo01",
+      "name": "foo01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${fparse 42}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${fparse 42}",
+      "valueType": "string",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/Simple/foo02",
+      "name": "foo02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${fparse 42}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/Multiple",
+      "name": "Multiple",
+      "header": "Multiple",
+      "line": 7,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Multiple/foo01",
+      "name": "foo01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${fparse 42}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${fparse 42}",
+      "valueType": "string",
+      "line": 8,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Multiple/bar01",
+      "name": "bar01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${fparse foo01}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${fparse foo01}",
+      "valueType": "string",
+      "line": 8,
+      "column": 22
+    },
+    {
+      "kind": "array",
+      "path": "/Multiple/foo02",
+      "name": "foo02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${fparse 42}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 9,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/Multiple/bar02",
+      "name": "bar02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${fparse foo02}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 9,
+      "column": 24
+    },
+    {
+      "kind": "block",
+      "path": "/Fparse",
+      "name": "Fparse",
+      "header": "Fparse",
+      "line": 12,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Fparse/pp_ini_bc",
+      "name": "pp_ini_bc",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${fparse if(depth<=2000, 1000*9.8*depth, 1000*9.8*depth+(depth-2000)*9.8*1000)}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${fparse if(depth<=2000, 1000*9.8*depth, 1000*9.8*depth+(depth-2000)*9.8*1000)}",
+      "valueType": "string",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/Examples",
+      "name": "Examples",
+      "header": "Examples",
+      "line": 16,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/Examples/sliceheight",
+      "name": "sliceheight",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${ ${fuelheight} ${numslices}}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${ ${fuelheight} ${numslices}}",
+      "valueType": "string",
+      "line": 17,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/Examples/file_base01",
+      "name": "file_base01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${raw ${postprocessor_type_02} _fv}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${raw ${postprocessor_type_02} _fv}",
+      "valueType": "string",
+      "line": 18,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/Examples/file_base02",
+      "name": "file_base02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${raw ${postprocessor_type_01} _fv}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 19,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/NoQuotedNestings",
+      "name": "NoQuotedNestings",
+      "header": "NoQuotedNestings",
+      "line": 22,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/NoQuotedNestings/slice_01",
+      "name": "slice_01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${/ ${fuel ${numslices} height} }",
+          "valueType": "string"
+        }
+      ],
+      "value": "${/ ${fuel ${numslices} height} }",
+      "valueType": "string",
+      "line": 23,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/NoQuotedNestings/slice_02",
+      "name": "slice_02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${${fuel ${numslices} height}}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${${fuel ${numslices} height}}",
+      "valueType": "string",
+      "line": 24,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/NoQuotedNestings/slice_03",
+      "name": "slice_03",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${${${numslices} height}}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${${${numslices} height}}",
+      "valueType": "string",
+      "line": 25,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/NoQuotedNestings/slice_04",
+      "name": "slice_04",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${${${numslices}}}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${${${numslices}}}",
+      "valueType": "string",
+      "line": 26,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/NoQuotedNestings/slice_05",
+      "name": "slice_05",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${raw ${postprocessor ${numslices} _01} _fv}",
+          "valueType": "string"
+        }
+      ],
+      "value": "${raw ${postprocessor ${numslices} _01} _fv}",
+      "valueType": "string",
+      "line": 27,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/SingleQuotedArrays",
+      "name": "SingleQuotedArrays",
+      "header": "SingleQuotedArrays",
+      "line": 30,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedArrays/ndice_01",
+      "name": "ndice_01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${/ ${fuel ${numslices} height} }",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 31,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedArrays/ndice_02",
+      "name": "ndice_02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${${fuel ${numslices} height}}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 32,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedArrays/ndice_03",
+      "name": "ndice_03",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${${${numslices} height}}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 33,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedArrays/ndice_04",
+      "name": "ndice_04",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${${${numslices}}}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 34,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/SingleQuotedArrays/ndice_05",
+      "name": "ndice_05",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "${raw ${postprocessor ${numslices} _01} _fv}",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 35,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/DoubleQuotedStrings",
+      "name": "DoubleQuotedStrings",
+      "header": "DoubleQuotedStrings",
+      "line": 38,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedStrings/nchop_01",
+      "name": "nchop_01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"${/ ${fuel ${numslices} height} }\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"${/ ${fuel ${numslices} height} }\"",
+      "valueType": "quoted-string",
+      "line": 39,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedStrings/nchop_02",
+      "name": "nchop_02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"${${fuel ${numslices} height}}\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"${${fuel ${numslices} height}}\"",
+      "valueType": "quoted-string",
+      "line": 40,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedStrings/nchop_03",
+      "name": "nchop_03",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"${${${numslices} height}}\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"${${${numslices} height}}\"",
+      "valueType": "quoted-string",
+      "line": 41,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedStrings/nchop_04",
+      "name": "nchop_04",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"${${${numslices}}}\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"${${${numslices}}}\"",
+      "valueType": "quoted-string",
+      "line": 42,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/DoubleQuotedStrings/nchop_05",
+      "name": "nchop_05",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"${raw ${postprocessor ${numslices} _01} _fv}\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"${raw ${postprocessor ${numslices} _01} _fv}\"",
+      "valueType": "quoted-string",
+      "line": 43,
+      "column": 3
+    }
+  ]
+}

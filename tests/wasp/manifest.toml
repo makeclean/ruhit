@@ -1,0 +1,1427 @@
+version = 1
+wasp_repo = "https://github.com/ornl-neams-workbench/wasp"
+wasp_commit = "ce25dcde73ba81c70c330204ea5bf856762b95ac"
+moose_vendor_path = "framework/contrib/wasp"
+
+[[case]]
+id = "hit/int_real"
+suite = "hit"
+wasp_test = "HITInterpreter.int_real"
+rust_test = "wasp_hit_int_real"
+category = "numbers"
+phase = "A"
+input = "inputs/hit/int_real.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/int_real_as_keys"
+suite = "hit"
+wasp_test = "HITInterpreter.int_real_as_keys"
+rust_test = "wasp_hit_int_real_as_keys"
+category = "numbers"
+phase = "A"
+input = "inputs/hit/int_real_as_keys.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/bad"
+suite = "hit"
+wasp_test = "HITInterpreter.bad"
+rust_test = "wasp_hit_bad"
+category = "basics"
+phase = "A"
+input = "inputs/hit/bad.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/simple"
+suite = "hit"
+wasp_test = "HITInterpreter.simple"
+rust_test = "wasp_hit_simple"
+category = "basics"
+phase = "A"
+input = "inputs/hit/simple.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/empty_object"
+suite = "hit"
+wasp_test = "HITInterpreter.empty_object"
+rust_test = "wasp_hit_empty_object"
+category = "basics"
+phase = "A"
+input = "inputs/hit/empty_object.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/simple_object"
+suite = "hit"
+wasp_test = "HITInterpreter.simple_object"
+rust_test = "wasp_hit_simple_object"
+category = "basics"
+phase = "A"
+input = "inputs/hit/simple_object.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/less_simple_object"
+suite = "hit"
+wasp_test = "HITInterpreter.less_simple_object"
+rust_test = "wasp_hit_less_simple_object"
+category = "basics"
+phase = "A"
+input = "inputs/hit/less_simple_object.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/object_array"
+suite = "hit"
+wasp_test = "HITInterpreter.object_array"
+rust_test = "wasp_hit_object_array"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/object_array.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/double_quoted_value"
+suite = "hit"
+wasp_test = "HITInterpreter.double_quoted_value"
+rust_test = "wasp_hit_double_quoted_value"
+category = "quotes"
+phase = "C1"
+input = "inputs/hit/double_quoted_value.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/object_array_semicolons"
+suite = "hit"
+wasp_test = "HITInterpreter.object_array_semicolons"
+rust_test = "wasp_hit_object_array_semicolons"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/object_array_semicolons.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/object_empty_subobject"
+suite = "hit"
+wasp_test = "HITInterpreter.object_empty_subobject"
+rust_test = "wasp_hit_object_empty_subobject"
+category = "basics"
+phase = "A"
+input = "inputs/hit/object_empty_subobject.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/object_subobject"
+suite = "hit"
+wasp_test = "HITInterpreter.object_subobject"
+rust_test = "wasp_hit_object_subobject"
+category = "basics"
+phase = "A"
+input = "inputs/hit/object_subobject.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/simple_view"
+suite = "hit"
+wasp_test = "HITInterpreter.simple_view"
+rust_test = "wasp_hit_simple_view"
+category = "basics"
+phase = "A"
+input = "inputs/hit/simple_view.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/paths"
+suite = "hit"
+wasp_test = "HITInterpreter.paths"
+rust_test = "wasp_hit_paths"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/paths.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression"
+suite = "hit"
+wasp_test = "HITInterpreter.expression"
+rust_test = "wasp_hit_expression"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/comments"
+suite = "hit"
+wasp_test = "HITInterpreter.comments"
+rust_test = "wasp_hit_comments"
+category = "basics"
+phase = "A"
+input = "inputs/hit/comments.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/nested_subblocks"
+suite = "hit"
+wasp_test = "HITInterpreter.nested_subblocks"
+rust_test = "wasp_hit_nested_subblocks"
+category = "basics"
+phase = "A"
+input = "inputs/hit/nested_subblocks.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/multiple_objects"
+suite = "hit"
+wasp_test = "HITInterpreter.multiple_objects"
+rust_test = "wasp_hit_multiple_objects"
+category = "basics"
+phase = "A"
+input = "inputs/hit/multiple_objects.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/type_promotion"
+suite = "hit"
+wasp_test = "HITInterpreter.type_promotion"
+rust_test = "wasp_hit_type_promotion"
+category = "numbers"
+phase = "A"
+input = "inputs/hit/type_promotion.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/hit_syntax"
+suite = "hit"
+wasp_test = "HITInterpreter.hit_syntax"
+rust_test = "wasp_hit_hit_syntax"
+category = "basics"
+phase = "A"
+input = "inputs/hit/hit_syntax.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/period_in_block_declarators"
+suite = "hit"
+wasp_test = "HITInterpreter.period_in_block_declarators"
+rust_test = "wasp_hit_period_in_block_declarators"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/period_in_block_declarators.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/equals_brackets_quotes_in_arrays"
+suite = "hit"
+wasp_test = "HITInterpreter.equals_brackets_quotes_in_arrays"
+rust_test = "wasp_hit_equals_brackets_quotes_in_arrays"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/equals_brackets_quotes_in_arrays.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/double_quotes_in_arrays"
+suite = "hit"
+wasp_test = "HITInterpreter.double_quotes_in_arrays"
+rust_test = "wasp_hit_double_quotes_in_arrays"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/double_quotes_in_arrays.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/non_ascii_unicode_in_comments"
+suite = "hit"
+wasp_test = "HITInterpreter.non_ascii_unicode_in_comments"
+rust_test = "wasp_hit_non_ascii_unicode_in_comments"
+category = "unicode"
+phase = "A"
+input = "inputs/hit/non_ascii_unicode_in_comments.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/multi_line_multi_group_arrays"
+suite = "hit"
+wasp_test = "HITInterpreter.multi_line_multi_group_arrays"
+rust_test = "wasp_hit_multi_line_multi_group_arrays"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/multi_line_multi_group_arrays.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/equals_and_quotes_after_slash"
+suite = "hit"
+wasp_test = "HITInterpreter.equals_and_quotes_after_slash"
+rust_test = "wasp_hit_equals_and_quotes_after_slash"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/equals_and_quotes_after_slash.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/shorthand_path_naming_blocks"
+suite = "hit"
+wasp_test = "HITInterpreter.shorthand_path_naming_blocks"
+rust_test = "wasp_hit_shorthand_path_naming_blocks"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/shorthand_path_naming_blocks.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/shorthand_path_naming_keyed_values"
+suite = "hit"
+wasp_test = "HITInterpreter.shorthand_path_naming_keyed_values"
+rust_test = "wasp_hit_shorthand_path_naming_keyed_values"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/shorthand_path_naming_keyed_values.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/shorthand_path_naming_keyed_arrays"
+suite = "hit"
+wasp_test = "HITInterpreter.shorthand_path_naming_keyed_arrays"
+rust_test = "wasp_hit_shorthand_path_naming_keyed_arrays"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/shorthand_path_naming_keyed_arrays.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/keyed_keyed_values"
+suite = "hit"
+wasp_test = "HITInterpreter.keyed_keyed_values"
+rust_test = "wasp_hit_keyed_keyed_values"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/keyed_keyed_values.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/keyed_keyed_arrays"
+suite = "hit"
+wasp_test = "HITInterpreter.keyed_keyed_arrays"
+rust_test = "wasp_hit_keyed_keyed_arrays"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/keyed_keyed_arrays.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/shorthand_path_naming_keyed_keyed_values"
+suite = "hit"
+wasp_test = "HITInterpreter.shorthand_path_naming_keyed_keyed_values"
+rust_test = "wasp_hit_shorthand_path_naming_keyed_keyed_values"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/shorthand_path_naming_keyed_keyed_values.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/shorthand_path_naming_keyed_keyed_arrays"
+suite = "hit"
+wasp_test = "HITInterpreter.shorthand_path_naming_keyed_keyed_arrays"
+rust_test = "wasp_hit_shorthand_path_naming_keyed_keyed_arrays"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/shorthand_path_naming_keyed_keyed_arrays.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/arrays_containing_keyed_values"
+suite = "hit"
+wasp_test = "HITInterpreter.arrays_containing_keyed_values"
+rust_test = "wasp_hit_arrays_containing_keyed_values"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/arrays_containing_keyed_values.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/only_include_not_found"
+suite = "hit"
+wasp_test = "HITInterpreter.only_include_not_found"
+rust_test = "wasp_hit_only_include_not_found"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/only_include_not_found.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/only_include"
+suite = "hit"
+wasp_test = "HITInterpreter.only_include"
+rust_test = "wasp_hit_only_include"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/only_include.i"
+workdir = "inputs/hit/include/only_include"
+fixtures = ["block.i"]
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hit/include_block"
+suite = "hit"
+wasp_test = "HITInterpreter.include_block"
+rust_test = "wasp_hit_include_block"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/include_block.i"
+workdir = "inputs/hit/include/include_block"
+fixtures = ["nested_block.i"]
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hit/iterating_include"
+suite = "hit"
+wasp_test = "HITInterpreter.iterating_include"
+rust_test = "wasp_hit_iterating_include"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/iterating_include.i"
+workdir = "inputs/hit/include/iterating_include"
+fixtures = ["b.i"]
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hit/is_nested_file"
+suite = "hit"
+wasp_test = "HITInterpreter.is_nested_file"
+rust_test = "wasp_hit_is_nested_file"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/is_nested_file.i"
+workdir = "inputs/hit/include/is_nested_file"
+fixtures = ["input_incl.i"]
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hit/file_include_circular_loop"
+suite = "hit"
+wasp_test = "HITInterpreter.file_include_circular_loop"
+rust_test = "wasp_hit_file_include_circular_loop"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/file_include_circular_loop.i"
+workdir = "inputs/hit/include/file_include_circular_loop"
+fixtures = ["input02.i", "input03.i"]
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/file_include_circular_self"
+suite = "hit"
+wasp_test = "HITInterpreter.file_include_circular_self"
+rust_test = "wasp_hit_file_include_circular_self"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/file_include_circular_self.i"
+workdir = "inputs/hit/include/file_include_circular_self"
+fixtures = ["input02.i"]
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/missing_object_terminator"
+suite = "hit"
+wasp_test = "HITInterpreter.missing_object_terminator"
+rust_test = "wasp_hit_missing_object_terminator"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/missing_object_terminator.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/object_name_with_invalid_pound"
+suite = "hit"
+wasp_test = "HITInterpreter.object_name_with_invalid_pound"
+rust_test = "wasp_hit_object_name_with_invalid_pound"
+category = "invalid-names"
+phase = "C4"
+input = "inputs/hit/object_name_with_invalid_pound.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/object_name_with_invalid_equals"
+suite = "hit"
+wasp_test = "HITInterpreter.object_name_with_invalid_equals"
+rust_test = "wasp_hit_object_name_with_invalid_equals"
+category = "invalid-names"
+phase = "C4"
+input = "inputs/hit/object_name_with_invalid_equals.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/object_name_with_invalid_ampersand"
+suite = "hit"
+wasp_test = "HITInterpreter.object_name_with_invalid_ampersand"
+rust_test = "wasp_hit_object_name_with_invalid_ampersand"
+category = "invalid-names"
+phase = "C4"
+input = "inputs/hit/object_name_with_invalid_ampersand.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/parameter_name_with_invalid_ampersand"
+suite = "hit"
+wasp_test = "HITInterpreter.parameter_name_with_invalid_ampersand"
+rust_test = "wasp_hit_parameter_name_with_invalid_ampersand"
+category = "invalid-names"
+phase = "C4"
+input = "inputs/hit/parameter_name_with_invalid_ampersand.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/invalid_object_terminator"
+suite = "hit"
+wasp_test = "HITInterpreter.invalid_object_terminator"
+rust_test = "wasp_hit_invalid_object_terminator"
+category = "invalid-names"
+phase = "C4"
+input = "inputs/hit/invalid_object_terminator.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/brace_expression_spans_multiple_lines"
+suite = "hit"
+wasp_test = "HITInterpreter.brace_expression_spans_multiple_lines"
+rust_test = "wasp_hit_brace_expression_spans_multiple_lines"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/brace_expression_spans_multiple_lines.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/quote_chaining_scenarios"
+suite = "hit"
+wasp_test = "HITInterpreter.quote_chaining_scenarios"
+rust_test = "wasp_hit_quote_chaining_scenarios"
+category = "quotes"
+phase = "C1"
+input = "inputs/hit/quote_chaining_scenarios.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/ampersands_and_semicolons_in_values"
+suite = "hit"
+wasp_test = "HITInterpreter.ampersands_and_semicolons_in_values"
+rust_test = "wasp_hit_ampersands_and_semicolons_in_values"
+category = "arrays"
+phase = "C1"
+input = "inputs/hit/ampersands_and_semicolons_in_values.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/period_starts_block_names_and_paths"
+suite = "hit"
+wasp_test = "HITInterpreter.period_starts_block_names_and_paths"
+rust_test = "wasp_hit_period_starts_block_names_and_paths"
+category = "paths"
+phase = "C5"
+input = "inputs/hit/period_starts_block_names_and_paths.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/comment_delimiters_within_quotes"
+suite = "hit"
+wasp_test = "HITInterpreter.comment_delimiters_within_quotes"
+rust_test = "wasp_hit_comment_delimiters_within_quotes"
+category = "quotes"
+phase = "C1"
+input = "inputs/hit/comment_delimiters_within_quotes.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_syntax"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_syntax"
+rust_test = "wasp_hit_expression_syntax"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_syntax.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_syntax_error"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_syntax_error"
+rust_test = "wasp_hit_expression_syntax_error"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_syntax_error.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/dollar_in_param_and_array_values"
+suite = "hit"
+wasp_test = "HITInterpreter.dollar_in_param_and_array_values"
+rust_test = "wasp_hit_dollar_in_param_and_array_values"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/dollar_in_param_and_array_values.i"
+fixtures = []
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hit/expression_w_prefix_and_suffix"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_w_prefix_and_suffix"
+rust_test = "wasp_hit_expression_w_prefix_and_suffix"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_w_prefix_and_suffix.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_w_prefix"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_w_prefix"
+rust_test = "wasp_hit_expression_w_prefix"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_w_prefix.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_w_suffix"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_w_suffix"
+rust_test = "wasp_hit_expression_w_suffix"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_w_suffix.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_unquoted_w_suffix"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_unquoted_w_suffix"
+rust_test = "wasp_hit_expression_unquoted_w_suffix"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_unquoted_w_suffix.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_unquoted_w_prefix"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_unquoted_w_prefix"
+rust_test = "wasp_hit_expression_unquoted_w_prefix"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_unquoted_w_prefix.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_variant"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_variant"
+rust_test = "wasp_hit_expression_variant"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_variant.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/expression_sandwich_variant"
+suite = "hit"
+wasp_test = "HITInterpreter.expression_sandwich_variant"
+rust_test = "wasp_hit_expression_sandwich_variant"
+category = "expressions"
+phase = "C2"
+input = "inputs/hit/expression_sandwich_variant.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/set_type"
+suite = "hit"
+wasp_test = "HITInterpreter.set_type"
+rust_test = "wasp_hit_set_type"
+category = "api"
+phase = "N/A"
+input = "inputs/hit/set_type.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/include_scenario_abc"
+suite = "hit"
+wasp_test = "HITInterpreter.include_scenario_abc"
+rust_test = "wasp_hit_include_scenario_abc"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/include/include_scenario_abc/fileA.i"
+workdir = "inputs/hit/include/include_scenario_abc"
+fixtures = ["fileB.i", "fileC.i"]
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hit/missing_value"
+suite = "hit"
+wasp_test = "HITInterpreter.missing_value"
+rust_test = "wasp_hit_missing_value"
+category = "basics"
+phase = "A"
+input = "inputs/hit/missing_value.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_in_block"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_in_block"
+rust_test = "wasp_hit_recovery_missing_value_in_block"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_in_block.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_in_block2"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_in_block2"
+rust_test = "wasp_hit_recovery_missing_value_in_block2"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_in_block2.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_in_block3"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_in_block3"
+rust_test = "wasp_hit_recovery_missing_value_in_block3"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_in_block3.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_repeated_missing_value_in_block"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_repeated_missing_value_in_block"
+rust_test = "wasp_hit_recovery_repeated_missing_value_in_block"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_repeated_missing_value_in_block.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_repeated_missing_value_in_block_with_following"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_repeated_missing_value_in_block_with_following"
+rust_test = "wasp_hit_recovery_repeated_missing_value_in_block_with_following"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_repeated_missing_value_in_block_with_following.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_repeated_missing_value_at_root"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_repeated_missing_value_at_root"
+rust_test = "wasp_hit_recovery_repeated_missing_value_at_root"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_repeated_missing_value_at_root.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_at_root_w_comment"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_at_root_w_comment"
+rust_test = "wasp_hit_recovery_missing_value_at_root_w_comment"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_at_root_w_comment.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_in_block_w_comment"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_in_block_w_comment"
+rust_test = "wasp_hit_recovery_missing_value_in_block_w_comment"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_in_block_w_comment.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_unclosed_block_without_content"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_unclosed_block_without_content"
+rust_test = "wasp_hit_recovery_unclosed_block_without_content"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_unclosed_block_without_content.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_unclosed_block_with_content"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_unclosed_block_with_content"
+rust_test = "wasp_hit_recovery_unclosed_block_with_content"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_unclosed_block_with_content.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_assign_in_block"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_assign_in_block"
+rust_test = "wasp_hit_recovery_missing_assign_in_block"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_assign_in_block.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_assign_in_block_w_eof"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_assign_in_block_w_eof"
+rust_test = "wasp_hit_recovery_missing_assign_in_block_w_eof"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_assign_in_block_w_eof.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_in_unclosed_block"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_in_unclosed_block"
+rust_test = "wasp_hit_recovery_missing_value_in_unclosed_block"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_in_unclosed_block.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/find_node_column_past_document_end"
+suite = "hit"
+wasp_test = "HITInterpreter.find_node_column_past_document_end"
+rust_test = "wasp_hit_find_node_column_past_document_end"
+category = "api"
+phase = "N/A"
+input = "inputs/hit/find_node_column_past_document_end.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_in_unclosed_block_eof"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_in_unclosed_block_eof"
+rust_test = "wasp_hit_recovery_missing_value_in_unclosed_block_eof"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_in_unclosed_block_eof.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_value_eof"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_value_eof"
+rust_test = "wasp_hit_recovery_missing_value_eof"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_value_eof.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_assign_eof"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_assign_eof"
+rust_test = "wasp_hit_recovery_missing_assign_eof"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_assign_eof.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_partial_block_decl"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_partial_block_decl"
+rust_test = "wasp_hit_recovery_partial_block_decl"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_partial_block_decl.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_partial_block_decl_w_nl"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_partial_block_decl_w_nl"
+rust_test = "wasp_hit_recovery_partial_block_decl_w_nl"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_partial_block_decl_w_nl.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_partial_block_decl_w_more_data"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_partial_block_decl_w_more_data"
+rust_test = "wasp_hit_recovery_partial_block_decl_w_more_data"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_partial_block_decl_w_more_data.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_partial_block_decl_w_data"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_partial_block_decl_w_data"
+rust_test = "wasp_hit_recovery_partial_block_decl_w_data"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_partial_block_decl_w_data.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_partial_block_decl_w_moredata_missing_terminator"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_partial_block_decl_w_moredata_missing_terminator"
+rust_test = "wasp_hit_recovery_partial_block_decl_w_moredata_missing_terminator"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_partial_block_decl_w_moredata_missing_terminator.i"
+fixtures = []
+expect = "error"
+status = "match"
+
+[[case]]
+id = "hit/recovery_missing_block_name"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_block_name"
+rust_test = "wasp_hit_recovery_missing_block_name"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_block_name.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/recovery_missing_block_name_EOF"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_missing_block_name_EOF"
+rust_test = "wasp_hit_recovery_missing_block_name_eof"
+category = "recovery"
+phase = "C7"
+input = "inputs/hit/recovery_missing_block_name_EOF.i"
+fixtures = []
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/test_quote_after_newline"
+suite = "hit"
+wasp_test = "HITInterpreter.test_quote_after_newline"
+rust_test = "wasp_hit_test_quote_after_newline"
+category = "quotes"
+phase = "C1"
+input = "inputs/hit/test_quote_after_newline.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/test_dquote_after_newline"
+suite = "hit"
+wasp_test = "HITInterpreter.test_dquote_after_newline"
+rust_test = "wasp_hit_test_dquote_after_newline"
+category = "quotes"
+phase = "C1"
+input = "inputs/hit/test_dquote_after_newline.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/override_assigns"
+suite = "hit"
+wasp_test = "HITInterpreter.override_assigns"
+rust_test = "wasp_hit_override_assigns"
+category = "override"
+phase = "C3"
+input = "inputs/hit/override_assigns.i"
+fixtures = []
+expect = "ok"
+status = "match"
+
+[[case]]
+id = "hit/recovery_include_file_with_syntax_error_plus_input"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_include_file_with_syntax_error_plus_input"
+rust_test = "wasp_hit_recovery_include_file_with_syntax_error_plus_input"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/recovery_include_file_with_syntax_error_plus_input.i"
+workdir = "inputs/hit/include/recovery_include_file_with_syntax_error_plus_input"
+fixtures = ["input_incl.i"]
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/recovery_include_file_with_syntax_error_on_its_own"
+suite = "hit"
+wasp_test = "HITInterpreter.recovery_include_file_with_syntax_error_on_its_own"
+rust_test = "wasp_hit_recovery_include_file_with_syntax_error_on_its_own"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/recovery_include_file_with_syntax_error_on_its_own.i"
+workdir = "inputs/hit/include/recovery_include_file_with_syntax_error_on_its_own"
+fixtures = ["input_incl.i"]
+expect = "error"
+status = "baseline"
+
+[[case]]
+id = "hit/success_using_include_file_that_has_nothing_inside"
+suite = "hit"
+wasp_test = "HITInterpreter.success_using_include_file_that_has_nothing_inside"
+rust_test = "wasp_hit_success_using_include_file_that_has_nothing_inside"
+category = "includes"
+phase = "C6"
+input = "inputs/hit/success_using_include_file_that_has_nothing_inside.i"
+workdir = "inputs/hit/include/success_using_include_file_that_has_nothing_inside"
+fixtures = ["input_incl.i"]
+expect = "ok"
+status = "baseline"
+
+[[case]]
+id = "hive/MinOccurs"
+suite = "hive"
+wasp_test = "HITHIVE.MinOccurs"
+rust_test = "wasp_hive_minoccurs"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/MinOccurs.sch"
+fail_input = "inputs/hive/inputs/MinOccurs.fail.gp"
+pass_input = "inputs/hive/inputs/MinOccurs.pass.gp"
+expected_errors = "inputs/hive/outputs/MinOccurs.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/MaxOccurs"
+suite = "hive"
+wasp_test = "HITHIVE.MaxOccurs"
+rust_test = "wasp_hive_maxoccurs"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/MaxOccurs.sch"
+fail_input = "inputs/hive/inputs/MaxOccurs.fail.gp"
+pass_input = "inputs/hive/inputs/MaxOccurs.pass.gp"
+expected_errors = "inputs/hive/outputs/MaxOccurs.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ValEnums"
+suite = "hive"
+wasp_test = "HITHIVE.ValEnums"
+rust_test = "wasp_hive_valenums"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ValEnums.sch"
+fail_input = "inputs/hive/inputs/ValEnums.fail.gp"
+pass_input = "inputs/hive/inputs/ValEnums.pass.gp"
+expected_errors = "inputs/hive/outputs/ValEnums.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ValType"
+suite = "hive"
+wasp_test = "HITHIVE.ValType"
+rust_test = "wasp_hive_valtype"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ValType.sch"
+fail_input = "inputs/hive/inputs/ValType.fail.gp"
+pass_input = "inputs/hive/inputs/ValType.pass.gp"
+expected_errors = "inputs/hive/outputs/ValType.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/MinValInc"
+suite = "hive"
+wasp_test = "HITHIVE.MinValInc"
+rust_test = "wasp_hive_minvalinc"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/MinValInc.sch"
+fail_input = "inputs/hive/inputs/MinValInc.fail.gp"
+pass_input = "inputs/hive/inputs/MinValInc.pass.gp"
+expected_errors = "inputs/hive/outputs/MinValInc.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/MinValExc"
+suite = "hive"
+wasp_test = "HITHIVE.MinValExc"
+rust_test = "wasp_hive_minvalexc"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/MinValExc.sch"
+fail_input = "inputs/hive/inputs/MinValExc.fail.gp"
+pass_input = "inputs/hive/inputs/MinValExc.pass.gp"
+expected_errors = "inputs/hive/outputs/MinValExc.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/MaxValInc"
+suite = "hive"
+wasp_test = "HITHIVE.MaxValInc"
+rust_test = "wasp_hive_maxvalinc"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/MaxValInc.sch"
+fail_input = "inputs/hive/inputs/MaxValInc.fail.gp"
+pass_input = "inputs/hive/inputs/MaxValInc.pass.gp"
+expected_errors = "inputs/hive/outputs/MaxValInc.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/MaxValExc"
+suite = "hive"
+wasp_test = "HITHIVE.MaxValExc"
+rust_test = "wasp_hive_maxvalexc"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/MaxValExc.sch"
+fail_input = "inputs/hive/inputs/MaxValExc.fail.gp"
+pass_input = "inputs/hive/inputs/MaxValExc.pass.gp"
+expected_errors = "inputs/hive/outputs/MaxValExc.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ChildAtLeastOne"
+suite = "hive"
+wasp_test = "HITHIVE.ChildAtLeastOne"
+rust_test = "wasp_hive_childatleastone"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ChildAtLeastOne.sch"
+fail_input = "inputs/hive/inputs/ChildAtLeastOne.fail.gp"
+pass_input = "inputs/hive/inputs/ChildAtLeastOne.pass.gp"
+expected_errors = "inputs/hive/outputs/ChildAtLeastOne.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ChildAtMostOne"
+suite = "hive"
+wasp_test = "HITHIVE.ChildAtMostOne"
+rust_test = "wasp_hive_childatmostone"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ChildAtMostOne.sch"
+fail_input = "inputs/hive/inputs/ChildAtMostOne.fail.gp"
+pass_input = "inputs/hive/inputs/ChildAtMostOne.pass.gp"
+expected_errors = "inputs/hive/outputs/ChildAtMostOne.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ChildCountEqual"
+suite = "hive"
+wasp_test = "HITHIVE.ChildCountEqual"
+rust_test = "wasp_hive_childcountequal"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ChildCountEqual.sch"
+fail_input = "inputs/hive/inputs/ChildCountEqual.fail.gp"
+pass_input = "inputs/hive/inputs/ChildCountEqual.pass.gp"
+expected_errors = "inputs/hive/outputs/ChildCountEqual.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ChildExactlyOne"
+suite = "hive"
+wasp_test = "HITHIVE.ChildExactlyOne"
+rust_test = "wasp_hive_childexactlyone"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ChildExactlyOne.sch"
+fail_input = "inputs/hive/inputs/ChildExactlyOne.fail.gp"
+pass_input = "inputs/hive/inputs/ChildExactlyOne.pass.gp"
+expected_errors = "inputs/hive/outputs/ChildExactlyOne.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ChildUniqueness"
+suite = "hive"
+wasp_test = "HITHIVE.ChildUniqueness"
+rust_test = "wasp_hive_childuniqueness"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ChildUniqueness.sch"
+fail_input = "inputs/hive/inputs/ChildUniqueness.fail.gp"
+pass_input = "inputs/hive/inputs/ChildUniqueness.pass.gp"
+expected_errors = "inputs/hive/outputs/ChildUniqueness.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/DecreaseOver"
+suite = "hive"
+wasp_test = "HITHIVE.DecreaseOver"
+rust_test = "wasp_hive_decreaseover"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/DecreaseOver.sch"
+fail_input = "inputs/hive/inputs/DecreaseOver.fail.gp"
+pass_input = "inputs/hive/inputs/DecreaseOver.pass.gp"
+expected_errors = "inputs/hive/outputs/DecreaseOver.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/ExistsIn"
+suite = "hive"
+wasp_test = "HITHIVE.ExistsIn"
+rust_test = "wasp_hive_existsin"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ExistsIn.sch"
+fail_input = "inputs/hive/inputs/ExistsIn.fail.gp"
+pass_input = "inputs/hive/inputs/ExistsIn.pass.gp"
+expected_errors = "inputs/hive/outputs/ExistsIn.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/Extras"
+suite = "hive"
+wasp_test = "HITHIVE.Extras"
+rust_test = "wasp_hive_extras"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/Extras.sch"
+fail_input = "inputs/hive/inputs/Extras.fail.gp"
+pass_input = "inputs/hive/inputs/Extras.pass.gp"
+expected_errors = "inputs/hive/outputs/Extras.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/IncreaseOver"
+suite = "hive"
+wasp_test = "HITHIVE.IncreaseOver"
+rust_test = "wasp_hive_increaseover"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/IncreaseOver.sch"
+fail_input = "inputs/hive/inputs/IncreaseOver.fail.gp"
+pass_input = "inputs/hive/inputs/IncreaseOver.pass.gp"
+expected_errors = "inputs/hive/outputs/IncreaseOver.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/NotExistsIn"
+suite = "hive"
+wasp_test = "HITHIVE.NotExistsIn"
+rust_test = "wasp_hive_notexistsin"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/NotExistsIn.sch"
+fail_input = "inputs/hive/inputs/NotExistsIn.fail.gp"
+pass_input = "inputs/hive/inputs/NotExistsIn.pass.gp"
+expected_errors = "inputs/hive/outputs/NotExistsIn.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/SumOver"
+suite = "hive"
+wasp_test = "HITHIVE.SumOver"
+rust_test = "wasp_hive_sumover"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/SumOver.sch"
+fail_input = "inputs/hive/inputs/SumOver.fail.gp"
+pass_input = "inputs/hive/inputs/SumOver.pass.gp"
+expected_errors = "inputs/hive/outputs/SumOver.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/SumOverGroup"
+suite = "hive"
+wasp_test = "HITHIVE.SumOverGroup"
+rust_test = "wasp_hive_sumovergroup"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/SumOverGroup.sch"
+fail_input = "inputs/hive/inputs/SumOverGroup.fail.gp"
+pass_input = "inputs/hive/inputs/SumOverGroup.pass.gp"
+expected_errors = "inputs/hive/outputs/SumOverGroup.fail.gld"
+status = "baseline"
+
+[[case]]
+id = "hive/validation_with_includes"
+suite = "hive"
+wasp_test = "HITHIVE.validation_with_includes"
+rust_test = "wasp_hive_validation_with_includes"
+category = "hive"
+phase = "D"
+schema = "inputs/hive/schemas/ChildAtLeastOne.sch"
+fail_input = "inputs/hive/inputs/ChildAtLeastOneInclude.fail.gp"
+pass_input = "inputs/hive/inputs/ChildAtLeastOneInclude.pass.gp"
+expected_errors = "inputs/hive/outputs/ChildAtLeastOneInclude.fail.gld"
+status = "baseline"

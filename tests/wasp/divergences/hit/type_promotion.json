@@ -1,0 +1,206 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 1,
+      "message": "unclosed block 'Problem'; expected a closing header",
+      "source": "stream input"
+    },
+    {
+      "column": 5,
+      "line": 4,
+      "message": "unclosed block 's1'; expected a closing header",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "Problem",
+      "kind": "block",
+      "line": 1,
+      "name": "Problem",
+      "path": "/Problem"
+    },
+    {
+      "column": 5,
+      "kind": "comment",
+      "line": 2,
+      "path": "/Problem/comment",
+      "text": "# Specify coordinate system type"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 3,
+      "name": "type",
+      "override": false,
+      "path": "/Problem/type",
+      "value": "ted",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "ted",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 5,
+      "header": "./s1",
+      "kind": "block",
+      "line": 4,
+      "name": "s1",
+      "path": "/Problem/s1"
+    },
+    {
+      "assign": "=",
+      "column": 12,
+      "kind": "array",
+      "line": 4,
+      "name": "type",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "fred",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "",
+          "valueType": "array"
+        }
+      ],
+      "path": "/Problem/s1/type"
+    },
+    {
+      "column": 5,
+      "header": "./s2",
+      "kind": "block",
+      "line": 5,
+      "name": "s2",
+      "path": "/Problem/s1/s2"
+    },
+    {
+      "assign": "=",
+      "column": 12,
+      "kind": "parameter",
+      "line": 5,
+      "name": "type",
+      "override": false,
+      "path": "/Problem/s1/s2/type",
+      "value": "x",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "x",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "assign": "=",
+      "column": 22,
+      "kind": "array",
+      "line": 5,
+      "name": "y",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "1",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "",
+          "valueType": "array"
+        }
+      ],
+      "path": "/Problem/s1/s2/y"
+    },
+    {
+      "column": 1,
+      "header": "p1",
+      "kind": "block",
+      "line": 7,
+      "name": "p1",
+      "path": "/Problem/s1/p1"
+    },
+    {
+      "assign": "=",
+      "column": 5,
+      "kind": "parameter",
+      "line": 8,
+      "name": "type",
+      "override": false,
+      "path": "/Problem/s1/p1/type",
+      "value": "t1",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "t1",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "p2",
+      "kind": "block",
+      "line": 10,
+      "name": "p2",
+      "path": "/Problem/s1/p2"
+    },
+    {
+      "assign": "=",
+      "column": 4,
+      "kind": "parameter",
+      "line": 11,
+      "name": "type",
+      "override": false,
+      "path": "/Problem/s1/p2/type",
+      "value": "t2",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "t2",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 5,
+      "header": "./s3",
+      "kind": "block",
+      "line": 12,
+      "name": "s3",
+      "path": "/Problem/s1/p2/s3"
+    },
+    {
+      "assign": "=",
+      "column": 9,
+      "kind": "parameter",
+      "line": 13,
+      "name": "type",
+      "override": false,
+      "path": "/Problem/s1/p2/s3/type",
+      "value": "us3",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "us3",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

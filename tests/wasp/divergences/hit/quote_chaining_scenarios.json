@@ -1,0 +1,165 @@
+{
+  "diagnostics": [
+    {
+      "column": 20,
+      "line": 7,
+      "message": "expected '=' after parameter name 'mix\\'2a'",
+      "source": "stream input"
+    },
+    {
+      "column": 17,
+      "line": 8,
+      "message": "unexpected '''",
+      "source": "stream input"
+    },
+    {
+      "column": 18,
+      "line": 8,
+      "message": "expected '=' after parameter name 'mix\\3a'",
+      "source": "stream input"
+    },
+    {
+      "column": 22,
+      "line": 8,
+      "message": "unknown escape sequence '\\3'",
+      "source": "stream input"
+    },
+    {
+      "column": 22,
+      "line": 15,
+      "message": "unknown escape sequence '\\3'",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "quotes",
+      "kind": "block",
+      "line": 2,
+      "name": "quotes",
+      "path": "/quotes"
+    },
+    {
+      "column": 5,
+      "header": "singles",
+      "kind": "block",
+      "line": 3,
+      "name": "singles",
+      "path": "/quotes/singles"
+    },
+    {
+      "assign": "=",
+      "column": 9,
+      "kind": "array",
+      "line": 4,
+      "name": "field",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "\"    mix1a mix1b \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "\"mix1c\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "mix1d",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "1.2",
+          "valueType": "real"
+        },
+        {
+          "partType": "value",
+          "value": "\"mix\\\"1e \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "mix1f",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"    mix1g\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "34",
+          "valueType": "integer"
+        },
+        {
+          "partType": "value",
+          "value": "\"mix\\'1h \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "path": "/quotes/singles/field"
+    },
+    {
+      "column": 5,
+      "header": "doubles",
+      "kind": "block",
+      "line": 10,
+      "name": "doubles",
+      "path": "/quotes/doubles"
+    },
+    {
+      "assign": "=",
+      "column": 9,
+      "kind": "array",
+      "line": 11,
+      "name": "field",
+      "override": false,
+      "parts": [
+        {
+          "partType": "value",
+          "value": "\" '    mix1a mix1b '   'mix1c'    mix1d 1.2\n\n                  'mix\\'1e '  mix1f '    mix1g' 34  'mix\\\"1h '\n                \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "\"mix\\\"2a\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "\"'mix\\3a'\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "\"    \"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "path": "/quotes/doubles/field"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

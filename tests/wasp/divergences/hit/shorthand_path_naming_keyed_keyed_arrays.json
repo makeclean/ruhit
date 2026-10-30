@@ -1,0 +1,158 @@
+{
+  "diagnostics": [
+    {
+      "column": 49,
+      "line": 3,
+      "message": "unexpected '''",
+      "source": "stream input"
+    },
+    {
+      "column": 50,
+      "line": 3,
+      "message": "expected '=' after parameter name 'eleven'",
+      "source": "stream input"
+    },
+    {
+      "column": 65,
+      "line": 7,
+      "message": "unexpected '''",
+      "source": "stream input"
+    },
+    {
+      "column": 66,
+      "line": 7,
+      "message": "expected '=' after parameter name '2.2'",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "path",
+      "kind": "block",
+      "line": 3,
+      "name": "path",
+      "path": "/path"
+    },
+    {
+      "column": 1,
+      "header": "to",
+      "kind": "block",
+      "line": 3,
+      "name": "to",
+      "path": "/path/to"
+    },
+    {
+      "column": 1,
+      "header": "array",
+      "kind": "block",
+      "line": 3,
+      "name": "array",
+      "path": "/path/to/array"
+    },
+    {
+      "column": 1,
+      "header": "outer",
+      "kind": "block",
+      "line": 3,
+      "name": "outer",
+      "path": "/path/to/array/outer"
+    },
+    {
+      "assign": "=",
+      "column": 1,
+      "kind": "parameter",
+      "line": 3,
+      "name": "01",
+      "override": false,
+      "path": "/path/to/array/outer/01",
+      "value": "path/to/array/inner/01=",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "path/to/array/inner/01=",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "column": 1,
+      "header": "path",
+      "kind": "block",
+      "line": 5,
+      "name": "path",
+      "path": "/path"
+    },
+    {
+      "column": 1,
+      "header": "to",
+      "kind": "block",
+      "line": 5,
+      "name": "to",
+      "path": "/path/to"
+    },
+    {
+      "column": 1,
+      "header": "//path/to///object/",
+      "kind": "block",
+      "line": 5,
+      "name": "object",
+      "path": "/path/to/object"
+    },
+    {
+      "column": 3,
+      "header": "path",
+      "kind": "block",
+      "line": 7,
+      "name": "path",
+      "path": "/path/to/object/path"
+    },
+    {
+      "column": 3,
+      "header": "to",
+      "kind": "block",
+      "line": 7,
+      "name": "to",
+      "path": "/path/to/object/path/to"
+    },
+    {
+      "column": 3,
+      "header": "array",
+      "kind": "block",
+      "line": 7,
+      "name": "array",
+      "path": "/path/to/object/path/to/array"
+    },
+    {
+      "column": 3,
+      "header": "outer",
+      "kind": "block",
+      "line": 7,
+      "name": "outer",
+      "path": "/path/to/object/path/to/array/outer"
+    },
+    {
+      "assign": "=",
+      "column": 3,
+      "kind": "parameter",
+      "line": 7,
+      "name": "02",
+      "override": false,
+      "path": "/path/to/object/path/to/array/outer/02",
+      "value": "///path/to///array/inner/02//=",
+      "valueType": "string",
+      "values": [
+        {
+          "value": "///path/to///array/inner/02//=",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

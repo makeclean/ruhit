@@ -1,0 +1,71 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/a",
+      "name": "a",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "1",
+          "valueType": "integer"
+        }
+      ],
+      "value": "1",
+      "valueType": "integer",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "include",
+      "path": "/incl",
+      "name": "incl",
+      "text": "!include b.i",
+      "target": "b.i",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/b",
+      "name": "b",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "2",
+          "valueType": "integer"
+        }
+      ],
+      "value": "2",
+      "valueType": "integer",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/c",
+      "name": "c",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "3",
+          "valueType": "integer"
+        }
+      ],
+      "value": "3",
+      "valueType": "integer",
+      "line": 3,
+      "column": 1
+    }
+  ]
+}

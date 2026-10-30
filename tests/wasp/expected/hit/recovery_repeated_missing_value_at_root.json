@@ -1,0 +1,50 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 3,
+      "column": 1,
+      "message": "syntax error, unexpected end of line"
+    },
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 9,
+      "message": "syntax error, 'key1' has a missing or malformed value"
+    },
+    {
+      "source": "stream input",
+      "line": 3,
+      "column": 9,
+      "message": "syntax error, 'key2' has a missing or malformed value"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/key1",
+      "name": "key1",
+      "assign": "=",
+      "override": false,
+      "values": [],
+      "line": 2,
+      "column": 4
+    },
+    {
+      "kind": "parameter",
+      "path": "/key2",
+      "name": "key2",
+      "assign": "=",
+      "override": false,
+      "values": [],
+      "line": 3,
+      "column": 4
+    }
+  ]
+}

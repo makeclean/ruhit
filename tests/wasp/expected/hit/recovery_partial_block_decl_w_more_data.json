@@ -1,0 +1,130 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 11,
+      "column": 1,
+      "message": "syntax error, unexpected end of line, expecting ]"
+    },
+    {
+      "source": "stream input",
+      "line": 8,
+      "column": 3,
+      "message": "syntax error, unexpected end of file, expecting block terminator"
+    },
+    {
+      "source": "stream input",
+      "line": 6,
+      "column": 1,
+      "message": "syntax error, unexpected end of file, expecting block terminator"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/block1",
+      "name": "block1",
+      "header": "block1",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/block1/foo1",
+      "name": "foo1",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar1",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar1",
+      "valueType": "string",
+      "line": 2,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/block1/foo2",
+      "name": "foo2",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar2",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar2",
+      "valueType": "string",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/block2",
+      "name": "block2",
+      "header": "block2",
+      "line": 6,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/block2/foo3",
+      "name": "foo3",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar3",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar3",
+      "valueType": "string",
+      "line": 7,
+      "column": 3
+    },
+    {
+      "kind": "block",
+      "path": "/block2/block3",
+      "name": "block3",
+      "header": "block3",
+      "line": 8,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/block2/block3/foo4",
+      "name": "foo4",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "bar4",
+          "valueType": "string"
+        }
+      ],
+      "value": "bar4",
+      "valueType": "string",
+      "line": 9,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/block2/block3/blo",
+      "name": "blo",
+      "header": "blo",
+      "line": 10,
+      "column": 5
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "diagnostics": [
+    {
+      "column": 2,
+      "line": 2,
+      "message": "syntax error, unexpected comment, expecting object name",
+      "source": "stream input"
+    },
+    {
+      "column": 1,
+      "line": 2,
+      "message": "syntax error, unexpected end of file, expecting block terminator",
+      "source": "stream input"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "",
+      "kind": "block",
+      "line": 2,
+      "name": "",
+      "path": "/"
+    },
+    {
+      "column": 2,
+      "kind": "comment",
+      "line": 2,
+      "path": "/comment",
+      "text": "#objectname] []"
+    }
+  ],
+  "parse": false,
+  "suite": "hit"
+}

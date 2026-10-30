@@ -1,0 +1,19 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/ted",
+      "name": "ted",
+      "header": "ted",
+      "line": 1,
+      "column": 1
+    }
+  ]
+}

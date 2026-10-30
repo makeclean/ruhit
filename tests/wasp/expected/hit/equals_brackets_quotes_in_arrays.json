@@ -1,0 +1,221 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "array",
+      "path": "/array01",
+      "name": "array01",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "d2F1:=D[F1,eta1,eta1]",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "d2F2:=D[F2,eta1,eta1]",
+          "valueType": "string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/BlockContainer",
+      "name": "BlockContainer",
+      "header": "BlockContainer",
+      "line": 3,
+      "column": 1
+    },
+    {
+      "kind": "array",
+      "path": "/BlockContainer/array02",
+      "name": "array02",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "08.4",
+          "valueType": "real"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "-5",
+          "valueType": "integer"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "123",
+          "valueType": "integer"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "abc:=t[e_x]t",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "-02.85",
+          "valueType": "real"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 4,
+      "column": 3
+    },
+    {
+      "kind": "array",
+      "path": "/BlockContainer/array03",
+      "name": "array03",
+      "assign": "=",
+      "override": false,
+      "parts": [
+        {
+          "partType": "quote",
+          "value": "'"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/real=1.01",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/int=10",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/string=one",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/blank=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\" \"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/real=2.02",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/int=20",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/string=two",
+          "valueType": "string"
+        },
+        {
+          "partType": "semicolon",
+          "value": ";"
+        },
+        {
+          "partType": "value",
+          "value": "path/to/blank=",
+          "valueType": "string"
+        },
+        {
+          "partType": "value",
+          "value": "\"\"",
+          "valueType": "quoted-string"
+        },
+        {
+          "partType": "quote",
+          "value": "'"
+        }
+      ],
+      "line": 5,
+      "column": 3
+    }
+  ]
+}

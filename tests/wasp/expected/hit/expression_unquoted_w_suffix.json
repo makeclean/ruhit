@@ -1,0 +1,28 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/key",
+      "name": "key",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${y=a b c}_z",
+          "valueType": "string"
+        }
+      ],
+      "value": "${y=a b c}_z",
+      "valueType": "string",
+      "line": 1,
+      "column": 1
+    }
+  ]
+}

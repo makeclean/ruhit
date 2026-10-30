@@ -1,0 +1,90 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 1,
+      "message": "syntax error, unexpected end of file, expecting block terminator"
+    },
+    {
+      "source": "stream input",
+      "line": 1,
+      "column": 1,
+      "message": "syntax error, unexpected end of file, expecting block terminator"
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/GlobalParams",
+      "name": "GlobalParams",
+      "header": "GlobalParams",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/GlobalParams/one",
+      "name": "one",
+      "header": "one",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/GlobalParams/one/one_sub",
+      "name": "one_sub",
+      "header": "one_sub",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/GlobalParams/one/one_sub/one_sub_param",
+      "name": "one_sub_param",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "100",
+          "valueType": "integer"
+        }
+      ],
+      "value": "100",
+      "valueType": "integer",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/GlobalParams/one/two",
+      "name": "two",
+      "header": "two",
+      "line": 6,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/GlobalParams/one/two/two_param",
+      "name": "two_param",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "200",
+          "valueType": "integer"
+        }
+      ],
+      "value": "200",
+      "valueType": "integer",
+      "line": 7,
+      "column": 3
+    }
+  ]
+}

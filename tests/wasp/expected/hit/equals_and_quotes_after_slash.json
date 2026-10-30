@@ -1,0 +1,255 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/SlashesInValues",
+      "name": "SlashesInValues",
+      "header": "SlashesInValues",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/SlashesInValues/input01",
+      "name": "input01",
+      "header": "input01",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input01/directory",
+      "name": "directory",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "some/directory/path01",
+          "valueType": "string"
+        }
+      ],
+      "value": "some/directory/path01",
+      "valueType": "string",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input01/inputfile",
+      "name": "inputfile",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "file01.i",
+          "valueType": "string"
+        }
+      ],
+      "value": "file01.i",
+      "valueType": "string",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input01/parameter",
+      "name": "parameter",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "path/to/a/param01=one",
+          "valueType": "string"
+        }
+      ],
+      "value": "path/to/a/param01=one",
+      "valueType": "string",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/SlashesInValues/input02",
+      "name": "input02",
+      "header": "input02",
+      "line": 8,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input02/directory",
+      "name": "directory",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "some/directory/path02/",
+          "valueType": "string"
+        }
+      ],
+      "value": "some/directory/path02/",
+      "valueType": "string",
+      "line": 9,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input02/inputfile",
+      "name": "inputfile",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "file02.i",
+          "valueType": "string"
+        }
+      ],
+      "value": "file02.i",
+      "valueType": "string",
+      "line": 10,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input02/parameter",
+      "name": "parameter",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "path/to/a/param02/=\"two\"",
+          "valueType": "string"
+        }
+      ],
+      "value": "path/to/a/param02/=\"two\"",
+      "valueType": "string",
+      "line": 11,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/SlashesInValues/input03",
+      "name": "input03",
+      "header": "input03",
+      "line": 13,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input03/directory",
+      "name": "directory",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "/some/directory/path03",
+          "valueType": "string"
+        }
+      ],
+      "value": "/some/directory/path03",
+      "valueType": "string",
+      "line": 14,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input03/inputfile",
+      "name": "inputfile",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "file03.i",
+          "valueType": "string"
+        }
+      ],
+      "value": "file03.i",
+      "valueType": "string",
+      "line": 15,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input03/parameter",
+      "name": "parameter",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "/path/to/a/param03=3.3",
+          "valueType": "string"
+        }
+      ],
+      "value": "/path/to/a/param03=3.3",
+      "valueType": "string",
+      "line": 16,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/SlashesInValues/input04",
+      "name": "input04",
+      "header": "input04",
+      "line": 18,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input04/directory",
+      "name": "directory",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "/some/directory/path04/",
+          "valueType": "string"
+        }
+      ],
+      "value": "/some/directory/path04/",
+      "valueType": "string",
+      "line": 19,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input04/inputfile",
+      "name": "inputfile",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "file04.i",
+          "valueType": "string"
+        }
+      ],
+      "value": "file04.i",
+      "valueType": "string",
+      "line": 20,
+      "column": 5
+    },
+    {
+      "kind": "parameter",
+      "path": "/SlashesInValues/input04/parameter",
+      "name": "parameter",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "/path/to/a/param04/=444",
+          "valueType": "string"
+        }
+      ],
+      "value": "/path/to/a/param04/=444",
+      "valueType": "string",
+      "line": 21,
+      "column": 5
+    }
+  ]
+}

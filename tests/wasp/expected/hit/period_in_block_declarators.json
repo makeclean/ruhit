@@ -1,0 +1,69 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/TopBlock",
+      "name": "TopBlock",
+      "header": "TopBlock",
+      "line": 2,
+      "column": 1
+    },
+    {
+      "kind": "block",
+      "path": "/TopBlock/child.01.period.no.type",
+      "name": "child.01.period.no.type",
+      "header": "child.01.period.no.type",
+      "line": 3,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/TopBlock/child.01.period.no.type/var01",
+      "name": "var01",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val01",
+          "valueType": "string"
+        }
+      ],
+      "value": "val01",
+      "valueType": "string",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "kind": "block",
+      "path": "/TopBlock/child.02.period.no.type",
+      "name": "child.02.period.no.type",
+      "header": "child.02.period.no.type",
+      "line": 6,
+      "column": 3
+    },
+    {
+      "kind": "parameter",
+      "path": "/TopBlock/child.02.period.no.type/var02",
+      "name": "var02",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "val02",
+          "valueType": "string"
+        }
+      ],
+      "value": "val02",
+      "valueType": "string",
+      "line": 7,
+      "column": 5
+    }
+  ]
+}

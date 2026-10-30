@@ -1,0 +1,35 @@
+{
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "column": 1,
+      "header": "block",
+      "kind": "block",
+      "line": 1,
+      "name": "block",
+      "path": "/block"
+    },
+    {
+      "column": 3,
+      "header": "./subblock",
+      "kind": "block",
+      "line": 2,
+      "name": "subblock",
+      "path": "/block/subblock"
+    },
+    {
+      "column": 5,
+      "header": "./nested_subblock",
+      "kind": "block",
+      "line": 3,
+      "name": "nested_subblock",
+      "path": "/block/subblock/nested_subblock"
+    }
+  ],
+  "parse": true,
+  "suite": "hit"
+}

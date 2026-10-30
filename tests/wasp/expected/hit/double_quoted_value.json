@@ -1,0 +1,36 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "block",
+      "path": "/ted",
+      "name": "ted",
+      "header": "ted",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "kind": "parameter",
+      "path": "/ted/key",
+      "name": "key",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "\"quotedvalue\"",
+          "valueType": "quoted-string"
+        }
+      ],
+      "value": "\"quotedvalue\"",
+      "valueType": "quoted-string",
+      "line": 1,
+      "column": 6
+    }
+  ]
+}

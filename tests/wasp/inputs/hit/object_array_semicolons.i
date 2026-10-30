@@ -1,0 +1,1 @@
+[ted]data='basic;201 ; again;here;close ; far lu'[]

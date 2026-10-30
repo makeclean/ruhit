@@ -1,0 +1,28 @@
+{
+  "suite": "hit",
+  "parse": false,
+  "diagnostics": [
+    {
+      "source": "stream input",
+      "line": 2,
+      "column": 6,
+      "message": "syntax error, unexpected invalid token, expecting = or :="
+    }
+  ],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/param",
+      "name": "param",
+      "assign": "",
+      "override": false,
+      "values": [],
+      "line": 2,
+      "column": 1
+    }
+  ]
+}

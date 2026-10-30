@@ -1,0 +1,28 @@
+{
+  "suite": "hit",
+  "parse": true,
+  "diagnostics": [],
+  "nodes": [
+    {
+      "kind": "document",
+      "path": "/"
+    },
+    {
+      "kind": "parameter",
+      "path": "/param_name",
+      "name": "param_name",
+      "assign": "=",
+      "override": false,
+      "values": [
+        {
+          "value": "${raw 4\n                 2\n            }",
+          "valueType": "string"
+        }
+      ],
+      "value": "${raw 4\n                 2\n            }",
+      "valueType": "string",
+      "line": 2,
+      "column": 1
+    }
+  ]
+}
